@@ -1,0 +1,39 @@
+.card-shadow-primary {
+  box-shadow: $box-shadow-primary;
+}
+
+.card-shadow-gray {
+  box-shadow: $box-shadow-gray;
+}
+.card-shadow-sm-gray{
+  box-shadow: $box-shadow-sm-gray;
+}
+.text-shadow{
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.25)}
+.radius-10{
+    border-radius: $border-radius-md-10 !important;
+}
+.paragraph-body{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+.paragraph-body-bold{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+.paragraph-body-small{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+.paragraph-caption{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}

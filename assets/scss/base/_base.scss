@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Swei Gothic TC";
+  src: url("/assets/fonts/swei-gothic/SweiGothicCJKtc-Regular.woff2")
+      format("woff2"),
+    url("/assets/fonts/swei-gothic/SweiGothicCJKtc-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: SweiGothicCJKtc-Regular;
+  src: url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.142/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff2)
+    format("woff2");
+}
+// Lucide SVG 調整大小與對齊
+svg[data-lucide] {
+  display: inline; // 或 inline-block
+  vertical-align: middle;
+}
+/* 標籤的基本樣式 */
+*,*::after,*::before{
+  box-sizing: border-box;
+}
+body {
+  font-family: "Swei Gothic TC", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: $gray-800;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0; /* 預設會有縮排 */
+}

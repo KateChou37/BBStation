@@ -1,8 +1,30 @@
+// 1. Bootstrap functions (必須最先)
 @import "../../node_modules/bootstrap/scss/functions";
-@import './utils/variables';
+
+// 2. 變數覆寫（自訂顏色、字型、間距…）
+@import "./utils/variables";
+
+// 3. Bootstrap 核心 (包含 variables, mixins, root…)
 @import "../../node_modules/bootstrap";
 
-@import './layout/header.scss';
-@import './layout/footer.scss';
+// 4. 自訂 Utilities 與 Dark mode
 
-@import './pages/index.scss';
+@import "./utils/utilities";
+@import "./utils/variables-dark";
+
+// 5. Bootstrap utility API (一定要放在 Bootstrap 之後)
+@import "bootstrap/scss/utilities/api";
+
+// 6. Base (reset, typography…)
+@import "./base/base";
+
+// 7. Layout (header, footer, grid 調整…)
+@import "./layout/header";
+@import "./layout/footer";
+
+// 8. Components (button, card, modal…)
+@import "./components/buttons.scss";
+
+// 9. Pages (index, about, product…)
+@import "./pages/index";
+@import "./pages/shoppingcar";

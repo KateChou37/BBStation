@@ -5,53 +5,247 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
   <body>
     <%- include('./layout/header'); -%>
-
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/dog.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+    <!-- 表頭 -->
+     <section>
+      <!-- 桌面板 -->
+      <div class="container-fluid  title-banner-md px-0 d-none d-sm-block">
+        <div class="position-absolute title-depiction mt-21 pe-3">
+          <img class="title-img-md mb-8 " src="/assets/images/index/hero_title.svg" alt="">
+          <div class="text-primary-600 d-flex align-items-center flex-column text-start">
+              <p class="mb-1"> 誕生於寶媽的心願，從一人轉向一群愛寶寶的父母 ——</p>
+              <p >想讓這些寶物延續溫度，傳遞給下一個需要的家庭。</p>
           </div>
         </div>
       </div>
-    </div>
+      <!-- 手機板 -->
+       <div class="container-md title-banner px-0 mx-0 d-sm-none d-block mb-12">
+        <div class="justify-content-center px-12 ">
+          <img class="lign-items-start title-img mb-8" src="/assets/images/index/hero_title_mobile.svg" alt="" style="width: 192px;">
+          <div class="text-primary-600  mb-8">
+              <p class="mb-1"> 誕生於寶媽的心願，從一人轉向一群愛寶寶的父母 ——</p>
+              <p >想讓這些寶物延續溫度，傳遞給下一個需要的家庭。</p>
+          </div>
+          <!-- 手機板收尋欄 -->
+           <div class="row mx-0 px-0 d-md-none d-block  ">
+             <a class=" col-12  btn button-primary-default-text rounded-pill" >
+            <i class=" text-white me-2" data-lucide="search" ></i> 
+            <span>我要找寶物</span>
+            </a>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- 收尋列 電腦版-->
+     <section>
+        <div class="container px-0 search-bar mb-19 d-none d-sm-block">
+          <div class="row  d-flex justify-content-center   ">
+          <div class=" mb-3 px-0 position-relative col-10 d-flex justify-content-center bg-gray-100 py-4 px-12 rounded-pill card-shadow-gray ">
+            <button class=" btn bg-white dropdown-toggle text-gray-600 rounded-end rounded-pill border border-1 d-flex justify-content-between py-5 px-8 button-text" style="width: 212px" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="d-flex align-items-center text-gray-600">全部分類</span>
+              <i class=" text-gray-600" data-lucide="chevron-down" style="width: 24px;height: 24px;"></i>
+            </button>
+            <ul class="dropdown-menu mt-2 rounded-10" style="width: 212px">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+            <!-- 輸入框 電腦版 -->
+             <div class="dropdown flex-grow-1 1 position-relative">
+            <input type="text " style="max-width: 100%;" class="form-control py-5 rounded-start rounded-pill " placeholder="輸入關鍵字..."  aria-label="Text input with dropdown button" type="submit" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 100%;">
+            <button class=" btn btn-primary rounded-circle  me-2 position-absolute top-50 end-0 translate-middle-y me-2 d-flex justify-content-center align-items-center" style="width:48px; height:48px;" >
+            <i class=" text-white" data-lucide="search" style="width:32px; height:32px;"></i></button>
+            <ul class="dropdown-menu w-100 mt-2 rounded-10 p-6" aria-labelledby="dropdownMenu2">
+              <li><button class="dropdown-item mb-3 paragraph-body-small fw-bold text-gray-800" type="button">大家都在找</button></li>
+              <li class="d-flex">
+                <button class="py-2 px-5 bg-gray-100 text-gray-800 border-0 rounded-lg" type="button">寶寶衣物</button>
+                <button class="py-2 px-5 bg-gray-100 text-gray-800 border-0 rounded-pill" type="button">推車</button>
+                <button class="py-2 px-5 bg-gray-100 text-gray-800 border-0 rounded-pill" type="button">奶瓶</button>
+                <button class="py-2 px-5 bg-gray-100 text-gray-800 border-0 rounded-pill" type="button">玩具</button>
+                <button class="py-2 px-5 bg-gray-100 text-gray-800 border-0 rounded-pill" type="button">書籍</button>
+              </li>
+            </ul>
+              </div>       
+          </div>
+          </div>
+        </div>
+     </section>
+
+
+    <!--  熱門分類 -->
+    <section>
+      <div class="container mb-17">
+        <h2 class="h5 mb-8 fw-bold">熱門分類</h2>
+        <div class=" container px-0">          
+          <div class="row row-cols-2 row-cols-md-4 gx-4 gy-3 ">
+            <!--嬰兒服飾  -->
+            <div class="col">
+          <div class="  hot-card  baby-clothes card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10" style="max-width: 306px;" href="">
+              <div class="hot-card-body row " href="#">
+                <div class="col-md-4 d-flex justify-content-center p-0">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category01_baby_clothes.svg"  style="width: 72px;height: 72px;" alt="嬰兒服飾">
+                </div>
+                <div class="col-md-8 p-md-0 d-flex align-items-center ">
+                  <div class=" card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >嬰兒服飾</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+            <!-- 男孩服飾 -->
+             <div class="col">
+          <div class="  hot-card boy-clothes  card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10 " style="max-width: 306px;" href="">
+              <div class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 m-0 mb-3" src="/assets/images/index/category02_boy_clothes.svg"  style="width: 72px;height: 72px;" alt="男孩服飾">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center  ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600  p-0" >男孩服飾</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- 女孩服飾 -->
+             <div class="col">   
+          <div class=" hot-card girl-clothes card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10" style="max-width: 306px;" href="">
+              <a class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 col-xl-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category03_girl_clothes.svg"  style="width: 72px;height: 72px;" alt="女孩服飾">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >女孩服飾</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            </div>  
+            <!-- 玩具 -->
+             <div class="col">         
+          <div class="hot-card toy card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10 " style="max-width: 306px;" href="">
+              <a class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category04_toy.svg"  style="width: 72px;height: 72px;" alt="玩具">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >玩具</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            </div> 
+            <!-- 育兒書籍 -->
+             <div class="col"> 
+            <div class="hot-card books card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10" style="max-width: 306px;" href="">
+              <a class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category05_books.svg"  style="width: 72px;height: 72px;" alt="玩具">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >育兒書籍</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            </div>
+            
+             <div class="col"> 
+            <div class=" hot-card maternity-suppliescard-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10  " style="max-width: 306px;" href="">
+              <a class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category06_breast_pump.svg"  style="width: 72px;height: 72px;" alt="玩具">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >哺乳用品</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            </div>
+            
+            <div class="col"> 
+            <div class="hot-card safety-seat card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10" style="max-width: 306px;" href="">
+              <a class="hot-card-body row gx-6" href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category07_stroller.svg"  style="width: 72px;height: 72px;" alt="玩具">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" ><span>推車/</span><span>安全座椅</span></h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+            </div>
+
+            <div class="col"> 
+            <div class=" hot-card mom-supplies card-shadow-primary rounded-10  bg-primary-50 py-md-8 ps-md-10 " style="max-width: 306px;" href="">
+              <div class="hot-card-body row gx-6"  href="#">
+                <div class=" col-12 col-md-4 d-flex justify-content-center p-0 p-md-0 mb-md-0 mx-0  ">
+                  <img class="hot-card-img img-fluid rounded-start mb-md-0 mb-3" src="/assets/images/index/category08_bag.svg"  style="width: 72px;height: 72px;" alt="玩具">
+                </div>
+                <div class="col-12 col-md-8 d-flex align-items-center p-0 ">
+                  <div class="overlay card-body d-flex justify-content-center ">
+                    <h5 class="h6 fw-bold text-color-gray-600 p-0" >媽媽用品</h5>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            </div>
+          </div>
+
+          
+        </div>    
+        </div>
+    </section>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <section>
+          <button type="button " class="btn rounded-circle position-relative button-Ghost-default-badge">
+             <i  class=" text-primary-300" data-lucide="handbag"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              1
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button> -->
+     
+
 
     <%- include('./layout/footer'); -%>
-
+    
+    
     <script type="module" src="../main.js"></script>
+
   </body>
 </html>

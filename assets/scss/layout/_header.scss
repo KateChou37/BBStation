@@ -1,4 +1,21 @@
-.header{
-  background: #69F0AE;
-  font-size: 64px;
+.navbar-brand {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 0;
+}
+.navbar-nav {
+  margin-right: 8px;
+}
+.nav-item {
+  margin-right: 32px;
+  font-weight: 400;
+  padding-top: 12px;
+  padding-bottom: 8px;
+
+  a {
+    color: #787f85;
+  }
+}
+.shoppingbag {
+  color: $primary-300;
 }

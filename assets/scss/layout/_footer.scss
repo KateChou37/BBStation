@@ -1,4 +1,16 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+footer {
+  background: #6abfdd;
+}
+.border-bottom {
+  border-bottom: 1px solid #e3f4f8;
+}
+.nav a {
+  padding: 0;
+  color: $primary-50;
+  font-weight: 700;
+}
+.copyright {
+  color: $primary-50;
+  font-size: 14px;
+  text-align: center;
 }
