@@ -157,6 +157,10 @@
 //寶物分享 上弧圖
 .section04_background_desktop{
     background-image: url(/assets/images/index/section04_background_desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: none;
 }
 
 //寶物分享 車廂
@@ -169,7 +173,67 @@
 .lucide-star {
   fill: currentColor;   /* 使用文字顏色做為填滿色 */
 }
+//更多商品 電腦版 hover
+.product-card-link {
+        .product-img{
+        position: relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+        &::after {
+        content: "";
+        position: absolute;
+        inset: 0; /* top, right, bottom, left = 0 */
+        background-color: rgba(0, 0, 0, 0.4); /* 黑色半透明 */
+        opacity: 0;
+        }
+        &:hover::after {
+        opacity: 1;
+        }
+        }  
+}
+.product-card-title {
+        display: block;
+        &:hover{
+           color: #189EC7;
+        }
+        }
+.scroll-button button {
+  color: $gray-500;
+  background-color: $white;
+}
+.scroll-button button.disabled{
+    color: $gray-500;
+    background-color: $white;
+    opacity: .5;   
 
+.scroll-button button:disabled {
+    color: $gray-500;
+    background-color: $white;
+}
+}
+.scroll-button button:not(.disabled) {
+    color: $gray-500;
+    background-color: $white;
+}
+.scroll-button button:not(.disabled):hover {
+  color: $gray-800;
+  background-color: #F2F2F4;
+  box-shadow: inset 0px 4px 0px 0px #00000033;
+}
+
+
+//寶物分享 隱藏X軸
+
+.screen{
+    -webkit-overflow-scrolling: touch; /* iOS 慣性滾動 */
+    scrollbar-width: none; 
+    display: none;
+    .screen::-webkit-scrollbar {
+        display: none;
+    }     
+}
 
 @media (max-width:768px){
     //手機板-熱門收尋
@@ -212,9 +276,32 @@
         }
       } 
 .section04_background_desktop{
-    background-image: url(/assets/images/index/section02_background_mobile.jpg);
+    display: none;
+}
+.section04_background_mobile{
+    display: block;
+    background-image: url(/assets/images/index/section04_background_mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: none;
+    margin-bottom: 200px;
 }
       
+}
+
+@media (max-width:576px){
+    .section04_background_mobile{
+    display: block;
+    background-image: url(/assets/images/index/section04_background_mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: none;
+    height: 780px;
+    margin-bottom: 34px;
+}
+
 }
         
 
