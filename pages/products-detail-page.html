@@ -8,7 +8,9 @@
   </head>
   <body>
     <%- include('./layout/header'); -%>
-    <div> 多功能寶寶背巾</div>
+  
+
+=======
 <!-- 商品詳情區塊 -->
 <section>
   <div class="bg-gray-50">
@@ -27,16 +29,16 @@
           <!-- 縮圖列 -->
           <div class="d-flex gap-3 overflow-x-auto">
             <div class="product-thumbnail flex-shrink-0 cursor-pointer active" data-image="/assets/images/購物車/Image-背巾.png" style="width: 147px; height: 147px; border-radius: 12px; overflow: hidden; border: 2px solid #0d6efd;">
-              <img src="/assets/images/購物車/Image-背巾.png" alt="圖片1" class="w-100 h-100" style="object-fit: cover;">
+              <img src="/assets/images/products-Images/product08.jpg" alt="圖片1" class="w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="product-thumbnail flex-shrink-0 cursor-pointer" data-image="/assets/images/index/product08.jpg" style="width: 147px; height: 147px; border-radius: 12px; overflow: hidden; border: 2px solid transparent;">
-              <img src="/assets/images/購物車/Image-小BaoBao透氣背巾.png" alt="圖片2" class="w-100 h-100" style="object-fit: cover;">
+              <img src="/assets/images/products-Images/thumbnail1.png" alt="圖片2" class="w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="product-thumbnail flex-shrink-0 cursor-pointer" data-image="/assets/images/index/product02.jpg" style="width: 147px; height: 147px; border-radius: 12px; overflow: hidden; border: 2px solid transparent;">
-              <img src="/assets/images/index/product08.jpg" alt="圖片3" class="w-100 h-100" style="object-fit: cover;">
+              <img src="/assets/images/products-Images/thumbnail3.jpg.png" alt="圖片3" class="w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="product-thumbnail flex-shrink-0 cursor-pointer" data-image="/assets/images/index/product04.jpg" style="width: 147px; height: 147px; border-radius: 12px; overflow: hidden; border: 2px solid transparent;">
-              <img src="/assets/images/index/product08.jpg" alt="圖片4" class="w-100 h-100" style="object-fit: cover;">
+              <img src="/assets/images/products-Images/thumbnail2.png" alt="圖片4" class="w-100 h-100" style="object-fit: cover;">
             </div>
           </div>
         </div>
@@ -202,41 +204,106 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<style>
-.cursor-pointer {
-  cursor: pointer;
-}
 
-.product-thumbnail {
-  transition: all 0.3s ease;
-}
+<!-- 賣家資訊卡片區塊 -->
+<section >
+  <div class="container">
+    <div class="bg-black position-relative mb-6" 
+         style="border: 2px solid #4DABF7; border-radius: 16px; height: 128px; padding: 24px 32px; display: flex; align-items: center;">
+      <div class="w-100 d-flex align-items-center justify-content-between">
+        
+        <div class="d-flex align-items-center" style="gap: 16px;">
+          
+          <!-- 左側：賣家頭像與基本資訊 -->
+          <div class="d-flex align-items-center flex-shrink-0" style="gap: 12px;">
+            <div class="flex-shrink-0">
+              <div class="rounded-circle overflow-hidden" 
+                   style="width: 64px; height: 64px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);">
+                <img src="/assets/images/購物車/Photo.png" alt="雙寶媽" class="w-100 h-100" style="object-fit: cover;">
+              </div>
+            </div>
+            <div>
+              <h5 class="fw-bold text-gray-800 mb-1" style="font-size: 14px; line-height: 1.2;">雙寶媽</h5>
+              <p class="text-gray-600 mb-0" style="font-size: 11px; line-height: 1.3;">台中市 西屯區</p>
+              <p class="text-gray-600 mb-0" style="font-size: 11px; line-height: 1.3;">2寶媽（育兒3年）</p>
+            </div>
+          </div>
+          
+          <!-- 中間：賣家留言對話框 -->
+          <div class="flex-shrink-0 position-relative" style="margin-left: 16px;">
+            <div class="bg-warning-subtle position-relative" 
+                 style="border-radius: 20px; border: 2px solid #FFC107; padding: 14px 24px; width: 240px;">
+              <div class="position-absolute" style="top: -10px; right: 20px;">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M4 9L8 5M8 5L4 1M8 5H0M14 1L18 5M18 5L14 9M18 5H26" 
+                        stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="mb-0 text-center text-gray-800 fw-normal" 
+                 style="font-size: 12px; line-height: 1.5;">
+                經過雙倍考驗的育兒神器，<br>分享給每一位新手爸媽！
+              </p>
+            </div>
+          </div>
+          
+          <!-- 右側：賣家統計資訊 -->
+          <div style="padding-left: 24px; min-width: 220px;">
+            <div class="d-flex flex-column" style="gap: 8px;">
+              <div class="d-flex align-items-center">
+                <span class="text-gray-600" style="font-size: 12px; width: 85px;">上架商品件數</span>
+                <span class="text-gray-800" style="font-size: 12px;">100% 有機棉＋尼龍</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <span class="text-gray-600" style="font-size: 12px; width: 85px;">平均回覆時間</span>
+                <span class="text-gray-800" style="font-size: 12px;">2天</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <span class="text-gray-600" style="font-size: 12px; width: 85px;">賣家評價</span>
+                <div class="d-flex" style="gap: 2px;">
+                  <i data-lucide="star" style="width: 16px; height: 16px;" class="text-warning" fill="#FFC107"></i>
+                  <i data-lucide="star" style="width: 16px; height: 16px;" class="text-warning" fill="#FFC107"></i>
+                  <i data-lucide="star" style="width: 16px; height: 16px;" class="text-warning" fill="#FFC107"></i>
+                  <i data-lucide="star" style="width: 16px; height: 16px;" class="text-warning" fill="#FFC107"></i>
+                  <i data-lucide="star" style="width: 16px; height: 16px;" class="text-warning" fill="#FFC107"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-.product-thumbnail:hover {
-  border-color: #0d6efd !important;
-}
+        <!-- 最右側：操作按鈕 -->
+        <div class="flex-shrink-0">
+          <div class="d-flex flex-column" style="gap: 10px;">
+            <a href="#" class="btn btn-primary d-flex align-items-center justify-content-center" 
+               style="border-radius: 10px; padding: 10px 24px; gap: 6px; white-space: nowrap; background-color: #4DABF7; border-color: #4DABF7; min-width: 120px;">
+              <i data-lucide="store" style="width: 16px; height: 16px;" class="text-white"></i>
+              <span class="text-white fw-medium" style="font-size: 13px;">查看賣場</span>
+            </a>
+            <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-center" 
+               style="border-radius: 10px; padding: 10px 24px; border-width: 1.5px; gap: 6px; white-space: nowrap; border-color: #4DABF7; color: #4DABF7; background-color: white; min-width: 120px;">
+              <i data-lucide="message-circle" style="width: 16px; height: 16px; color: #4DABF7;"></i>
+              <span class="fw-medium" style="font-size: 13px; color: #4DABF7;">我要聊聊</span>
+            </a>
+          </div>
+        </div>
 
-.quantity-btn:hover {
-  background-color: #f8f9fa !important;
-}
+      </div>
+    </div>
+  </div>
+</section>
 
-.overflow-x-auto {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
 
-.overflow-x-auto::-webkit-scrollbar {
-  height: 6px;
+<script>
+// 初始化 Lucide icons
+if (typeof lucide !== 'undefined') {
+  lucide.createIcons();
 }
+</script>
 
-.overflow-x-auto::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
 
-.overflow-x-auto::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
+
+
+
 
 .overflow-x-auto::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -246,8 +313,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- 爸媽交流區塊 -->
-<section>
-  <div class="bg-white">
+<section >
+  <div class="bg-gray-50">
     <div class="container py-17">
       
       <!-- 標題列 -->
@@ -268,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 頭像 -->
             <div class="flex-shrink-0">
               <div class="rounded-circle overflow-hidden bg-primary-100" style="width: 48px; height: 48px;">
-                <img src="/assets/images/index/avatar01.jpg" alt="小羽媽" class="w-100 h-100" style="object-fit: cover;">
+                <img src="/assets/images/details-images/advater14.jpg" alt="小羽媽" class="w-100 h-100" style="object-fit: cover;">
               </div>
             </div>
             
@@ -302,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="d-flex gap-3">
             <div class="flex-shrink-0">
               <div class="rounded-circle overflow-hidden bg-secondary-100" style="width: 48px; height: 48px;">
-                <img src="/assets/images/index/avatar05.jpg" alt="雙寶媽" class="w-100 h-100" style="object-fit: cover;">
+                <img src="/assets/images/購物車/Photo.png" alt="雙寶媽" class="w-100 h-100" style="object-fit: cover;">
               </div>
             </div>
             
@@ -335,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="d-flex gap-3">
             <div class="flex-shrink-0">
               <div class="rounded-circle overflow-hidden bg-success-100" style="width: 48px; height: 48px;">
-                <img src="/assets/images/index/avatar01.jpg" alt="琳達Linda" class="w-100 h-100" style="object-fit: cover;">
+                <img src="/assets/images/details-images/advater16.png" alt="琳達Linda" class="w-100 h-100" style="object-fit: cover;">
               </div>
             </div>
             
@@ -368,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="d-flex gap-3">
             <div class="flex-shrink-0">
               <div class="rounded-circle overflow-hidden bg-warning-100" style="width: 48px; height: 48px;">
-                <img src="/assets/images/index/avatar01.jpg" alt="爸爸初體驗" class="w-100 h-100" style="object-fit: cover;">
+                <img src="/assets/images/details-images/advater17.png" alt="爸爸初體驗" class="w-100 h-100" style="object-fit: cover;">
               </div>
             </div>
             
@@ -401,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="d-flex gap-3">
             <div class="flex-shrink-0">
               <div class="rounded-circle overflow-hidden bg-info-100" style="width: 48px; height: 48px;">
-                <img src="/assets/images/index/avatar01.jpg" alt="雙寶媽" class="w-100 h-100" style="object-fit: cover;">
+                <img src="/assets/images/購物車/Photo.png" alt="雙寶媽" class="w-100 h-100" style="object-fit: cover;">
               </div>
             </div>
             
@@ -497,52 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<style>
-.exchange-item {
-  transition: background-color 0.2s ease;
-}
 
-.exchange-item:hover {
-  background-color: #f8f9fa;
-  padding: 16px;
-  margin: 0 -16px 24px -16px;
-  border-radius: 12px;
-}
-
-.like-btn {
-  transition: all 0.2s ease;
-}
-
-.like-btn:hover i {
-  color: #0d6efd !important;
-  transform: scale(1.1);
-}
-
-.page-link {
-  transition: all 0.2s ease;
-}
-
-.page-link:hover {
-  background-color: #f8f9fa !important;
-  color: #0d6efd !important;
-}
-
-.page-item.active .page-link {
-  background-color: #0d6efd;
-}
-
-/* 響應式調整 */
-@media (max-width: 768px) {
-  .exchange-item .d-flex.gap-2 {
-    flex-direction: column;
-    gap: 4px !important;
-  }
-  
-  .exchange-item .d-flex.gap-2 span:nth-child(even) {
-    display: none;
-  }
-}
-</style>
 
 
 
@@ -638,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <!-- 02 兒童造型泳圈 -->
               <div class="col-lg-3 col-6">
                 <div class="card card-shadow-gray position-relative mb-4 border-0 overflow-hidden" style="border-radius: 24px;">
-                  <img class="" src="/assets/images/購物車/Image-泳衣.png" alt="兒童造型泳圈" style="border-radius: 24px 24px 0 0;">
+                  <img class="" src="/assets/images/products-Images/product10.jpg" alt="兒童造型泳圈" style="border-radius: 24px 24px 0 0;">
                   
                   <div class="d-flex d-lg-none d-block">
                     <div class="position-absolute" style="top:16px; left: 16px;">

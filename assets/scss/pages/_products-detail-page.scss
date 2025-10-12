@@ -39,6 +39,140 @@
 }
 
 
+
+
+
+
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.product-thumbnail {
+  transition: all 0.3s ease;
+}
+
+.product-thumbnail:hover {
+  border-color: #0d6efd !important;
+}
+
+.quantity-btn:hover {
+  background-color: #f8f9fa !important;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+//賣家資訊
+
+/* 對話框背景色 */
+.bg-warning-subtle {
+  background-color: #fff3cd;
+}
+
+/* 卡片懸停效果 */
+.bg-white.border:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 按鈕懸停效果 */
+.btn-primary {
+  background-color: #4DABF7;
+  border-color: #4DABF7;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #339af0;
+  border-color: #339af0;
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: #4DABF7;
+  border-color: #4DABF7;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #e7f5ff;
+  color: #339af0;
+  border-color: #339af0;
+  transform: translateY(-1px);
+}
+
+/* 對話框裝飾動畫 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.bg-warning-subtle:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* 星星懸停效果 */
+.text-warning:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* 響應式調整 */
+@media (max-width: 991px) {
+  .col-lg-3 .d-flex {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .col-lg-3 .flex-grow-1 {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .d-flex.flex-column.gap-2 {
+    gap: 12px !important;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px 16px !important;
+  }
+  
+  .bg-warning-subtle {
+    max-width: 100% !important;
+  }
+}
+
+
+
 //!-- 爸媽交流區塊 --
 
 .exchange-item {
@@ -87,3 +221,48 @@
 }
 
 //您最近看過的選單
+
+.exchange-item {
+  transition: background-color 0.2s ease;
+}
+
+.exchange-item:hover {
+  background-color: #f8f9fa;
+  padding: 16px;
+  margin: 0 -16px 24px -16px;
+  border-radius: 12px;
+}
+
+.like-btn {
+  transition: all 0.2s ease;
+}
+
+.like-btn:hover i {
+  color: #0d6efd !important;
+  transform: scale(1.1);
+}
+
+.page-link {
+  transition: all 0.2s ease;
+}
+
+.page-link:hover {
+  background-color: #f8f9fa !important;
+  color: #0d6efd !important;
+}
+
+.page-item.active .page-link {
+  background-color: #0d6efd;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .exchange-item .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 4px !important;
+  }
+  
+  .exchange-item .d-flex.gap-2 span:nth-child(even) {
+    display: none;
+  }
+}
