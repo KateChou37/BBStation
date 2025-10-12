@@ -3,12 +3,147 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shoppingcar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <title>product-list-page</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%> <%- include('./layout/footer'); -%>
 
+    <%- include('./layout/header'); -%> <%- include('./layout/footer'); -%>
+    <section class="banner">
+        <div>
+            <img src="../assets/images/products-Images/product_ad_01.jpg" alt="ad01">
+        </div>
+    </section>
+    <main class="container pt-20 pb-10">
+        <div class="row">
+            <!-- options -->
+            <div class="col-3 pe-14">
+              <div class="filter-option">
+                <div class="d-flex option-title mb-4">
+                  <i class="bi bi-funnel"></i>
+                  <h3 class="h5">篩選條件</h3>
+                </div>
+                <ul class="category-list">
+                  <li><label><input type="checkbox"> 嬰兒服飾</label></li>
+                  <li><label><input type="checkbox"> 男孩服飾</label></li>
+                  <li><label><input type="checkbox"> 女孩服飾</label></li>
+                  <li><label><input type="checkbox"> 玩具</label></li>
+                  <li><label><input type="checkbox"> 育兒書籍</label></li>
+                  <li><label><input type="checkbox"> 哺乳用品</label></li>
+
+                  <li><label><input type="checkbox" id="outdoor-parent"> 外出用品</label></li>
+                  <li>
+                    <ul class="sub-options">
+                      <li><label><input type="checkbox" class="outdoor-child"> 推車</label></li>
+                      <li><label><input type="checkbox" class="outdoor-child"> 揹巾</label></li>
+                      <li><label><input type="checkbox" class="outdoor-child"> 安全座椅</label></li>
+                    </ul>
+                  </li>
+                
+                  <li><label><input type="checkbox"> 媽媽用品</label></li>
+                </ul>
+              </div>
+
+              <div class="filter-option">
+              <div class="d-flex option-title mb-4">
+                <i class="text-primary-300" data-lucide="biceps-flexed"></i>
+                <h3 class="h5">位置（依地區）</h3>
+              </div>   
+              <ul class="category-list">
+                <li><label><input type="checkbox"> 台北</label></li>
+                <li><label><input type="checkbox"> 新北</label></li>
+                <li><label><input type="checkbox"> 桃園</label></li>
+                <li><label><input type="checkbox"> 台中</label></li>
+                <li><label><input type="checkbox"> 高雄</label></li>
+              </ul>
+              </div>
+
+              <div class="price-filter">
+              <div class="d-flex option-title mb-4">
+                <i class="bi bi-coin"></i> 
+                <h3 class="h5">價格範圍</h3>
+              </div>
+              <div>
+                <input type="number" id="min-price" min="0" step="1" placeholder="＄最低價格"><span> - </span>
+                <input type="number" id="max-price" min="0" step="1" placeholder="＄最高價格">
+              </div>
+              </div>
+
+              <div>
+              <button type="button" class="btn clear-btn">清除全部</button>
+              </div>
+            </div>
+
+            <!-- product-list -->
+            <div class="col-9">
+              <div class="row">
+                <div class="col-4 product-card">
+                
+                <a href="product.html" class="product-link">
+                  <div class="product-image-wrapper mb-4">
+                    <img src="/assets/images/products-Images/product08.jpg" alt="多功能寶寶背巾" class="mb-12">
+                    <div class="product-tags">
+                      <span class="tag tag-orange">九成新</span>
+                      <span class="tag tag-blue">寶寶包巾類</span>
+                    </div>
+                  </div>
+                </a>
+                
+                <a href="product.html" class="product-link">
+                  <h3 class="h5 mb-8">多功能寶寶背巾</h3>
+                </a>
+                <p class="text-body-small mb-8">宅配、超商店到店</p>
+                <h3 class="h5 item-price mb-8">NT$ 1,280</h3>
+                <div class="product-actions">
+                  <button class="btn-icon"><i class="bi bi-share"></i> 分享</button>
+                  <button class="btn-icon"><i class="bi bi-chat"></i> 聊聊</button>
+                </div>
+                </div>
+
+                </div>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+
+
+    </main>
     <script type="module" src="../main.js"></script>
+    <script>
+    const parentCheckbox = document.getElementById("outdoor-parent");
+const childCheckboxes = document.querySelectorAll(".outdoor-child");
+
+// 父層控制子層
+parentCheckbox.addEventListener("change", () => {
+  childCheckboxes.forEach(child => {
+    child.checked = parentCheckbox.checked;
+  });
+  parentCheckbox.indeterminate = false;
+});
+
+// 子層控制父層
+childCheckboxes.forEach(child => {
+  child.addEventListener("change", () => {
+    const total = childCheckboxes.length;
+    const checked = document.querySelectorAll(".outdoor-child:checked").length;
+
+    if (checked === 0) {
+      parentCheckbox.checked = false;
+      parentCheckbox.indeterminate = false;
+    } else if (checked === total) {
+      parentCheckbox.checked = true;
+      parentCheckbox.indeterminate = false;
+    } else {
+      parentCheckbox.checked = false;
+      parentCheckbox.indeterminate = true; // 顯示橫線
+    }
+  });
+});
+
+</script>
   </body>
 </html>
