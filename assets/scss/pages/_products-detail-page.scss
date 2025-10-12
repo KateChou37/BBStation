@@ -170,6 +170,9 @@
     max-width: 100% !important;
   }
 }
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 
 
