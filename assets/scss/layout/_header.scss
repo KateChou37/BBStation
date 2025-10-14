@@ -19,3 +19,27 @@
 .shoppingbag {
   color: $primary-300;
 }
+.underline .nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* 線條位置 */
+  left: 50%; /* 從中間開始 */
+  transform: translateX(-50%) scaleX(0); /* 縮到 0 */
+  transform-origin: center;
+  width: 100%;
+  height: 4px; /* 線條粗細 */
+  background-color: $secondary-200; /* 線條顏色，可改成主色 */
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* 滑鼠 hover 時展開 */
+.underline .nav-link:hover::after,
+.underline .nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}

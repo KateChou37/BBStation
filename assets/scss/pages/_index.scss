@@ -1,3 +1,6 @@
+// *, *::before, *::after { 
+//     outline: 1px solid #189EC7; }
+
 .title-bg-color{
     padding-bottom: 46.8px;
     background-color: $gray-50;
@@ -131,12 +134,18 @@
     position: absolute;
     background-image: url(/assets/images/index/Vector.svg),
                       url(/assets/images/index/Donation.svg);
-    background-repeat: no-repeat, repeat;
+    background-repeat: no-repeat, no-repeat;
     background-position: center calc(100% + -4px), center;
-    background-size: contain, cover;
-    width: 205.8125px;
-    height: 63px;
-  
+    background-size: contain, contain;
+
+    &:hover{
+        background-image:url(/assets/images/index/Donation-top.svg),
+                         url(/assets/images/index/Vector.svg),
+                         url(/assets/images/index/Donation.svg) ;
+        background-repeat: no-repeat  no-repeat, no-repeat;
+        background-position: calc(100% - 14px), center calc(100% + -4px), center;
+        background-size:  277px 217px , contain ,contain;
+    }
 }
 
 
@@ -152,6 +161,68 @@
 .product-rounded{
     border-radius: 40px;
     overflow: hidden;
+}
+//更多商品
+.icon-wrapper {
+  overflow: hidden; /* 防止箭頭超出邊界 */
+  background-color: $primary-400;
+}
+.icon-move {
+  transition: transform 0.3s ease; /* 控制滑動動畫 */
+}
+.more-link:hover {
+    .icon-wrapper{
+        background-color: $primary-600;
+    }
+    .icon-move {
+        transform: translateX(32px); /* 箭頭往右移動 4px */
+  }
+}
+/* 第二個箭頭（偽元素）設定 */
+.icon-move::after {
+  content: "";
+  position: absolute;
+  left: 100%; /* 從右側以外開始 */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;}
+
+
+/* hover 時第二個箭頭滑進來 */
+.more-link:hover .icon-move::after {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
+.button-hover-bg{
+    color: $primary-400;
+    .button-hover-text{
+        color: $gray-700;
+    }
+    
+    &:hover{
+    background-color: $primary-50;
+    .text-hover{
+        color: $primary-600;
+    }
+    .button-hover-text{
+        color: $primary-400;
+    }
+}
+}
+
+/* 預設隱藏愛心 */
+.heart-icon {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 滑鼠移到卡片時顯示 */
+.card:hover .heart-icon {
+  opacity: 1;
+  visibility: visible;
 }
 
 //寶物分享 上弧圖
@@ -174,7 +245,7 @@
   fill: currentColor;   /* 使用文字顏色做為填滿色 */
 }
 //更多商品 電腦版 hover
-.product-card-link {
+ .card .product-card-link {
         .product-img{
         position: relative;
         img{
@@ -193,8 +264,9 @@
         }
         }  
 }
-.product-card-title {
+ .product-card-title {
         display: block;
+        color: $gray-800;
         &:hover{
            color: #189EC7;
         }
@@ -233,6 +305,36 @@
     .screen::-webkit-scrollbar {
         display: none;
     }     
+}
+
+// 育兒資源，育兒文章
+.text-truncate-multi {
+  display: -webkit-box;
+  line-clamp: 3; // 顯示3行後截斷，可依實際需求調整
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 63px; /* 固定高度 */
+}
+
+
+.resource-img{
+    position: relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+        &::after {
+        content: "";
+        position: absolute;
+        inset: 0; /* top, right, bottom, left = 0 */
+        background-color: rgba(0, 0, 0, 0.4); /* 黑色半透明 */
+        opacity: 0;
+        border-radius: 40px 40px 0px 0px;
+        }
+        &:hover::after {
+        opacity: 1;
+        }
 }
 
 @media (max-width:768px){
@@ -285,7 +387,6 @@
     background-position: center center;
     background-size: cover;
     box-shadow: none;
-    margin-bottom: 200px;
 }
       
 }
@@ -298,8 +399,8 @@
     background-position: center center;
     background-size: cover;
     box-shadow: none;
-    height: 780px;
-    margin-bottom: 34px;
+   
+   
 }
 
 }
