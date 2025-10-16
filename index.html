@@ -7,85 +7,190 @@
     <title>index</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script type="module" crossorigin src="/BBStation/assets/main-vYGPLaR3.js"></script>
-    <link rel="stylesheet" crossorigin href="/BBStation/assets/main-CHbk4K6x.css">
+    <script type="module" crossorigin src="/BBStation/assets/main-O5wXK3_D.js"></script>
+    <link rel="stylesheet" crossorigin href="/BBStation/assets/main-fh9nPRZX.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-white py-0 fixed-top mx-0 px-0">
-  <div class="container navbar-top">
-    <a class="navbar-brand p-0" href="#">
-      <img src="/BBStation/assets/Logotype-TgRNg5gD.svg" alt="logo" />
+  <div class="container navbar-top ms-auto">
+    <a class="navbar-brand p-0 d-lg-none d-block" href="#">
+      <img src="/BBStation/assets/Logotype-TgRNg5gD.svg" alt="logo" style="width: 100px; height: 32px;" >
     </a>
+    <a class="navbar-brand p-0 d-lg-block d-none" href="#">
+      <img src="/BBStation/assets/Logotype-TgRNg5gD.svg" alt="logo" >
+    </a>
+    <!-- 手機板 header -->
+    <div class="d-flex align-items-center">
+     <!-- 1搜尋 OffcanvasMenu -->
     <button
       class="navbar-toggler border-0 shadow-none"
       type="button"
       data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar"
-      aria-controls="offcanvasNavbar"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+      data-bs-target="#offcanvasMenu"
+      aria-controls="offcanvasMenu"
+      aria-label="Toggle menu">
+     <i class="text-primary-300" data-lucide="search" style="width: 24px;height: 24px;"></i>
     </button>
-    <div
-      class="offcanvas offcanvas-end"
-      data-bs-scroll="true"
-      data-bs-backdrop="false"
-      tabindex="-1"
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-    >
-      <div class="offcanvas-header py-0">
-        <a class="navbar-brand p-0" href="#">
-          <img src="/BBStation/assets/Logotype-TgRNg5gD.svg" alt="logo" />
-        </a>
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-        <a class="p-3 ms-auto" href="#"
-          ><i class="text-primary-300" data-lucide="handbag"></i
-        ></a>
-        <button
-          type="button "
-          class="btn-close text-primary-300"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body d-flex align-items-center">
-        <ul class="navbar-nav underline ms-auto me-3 gap-0">
-          <li class="nav-item py-0 me-8">
-            <a class="nav-link px-0 pt-3 pb-2" aria-current="page" href="#"
-              >找寶物</a
-            >
-          </li>
-          <li class="nav-item py-0 me-8">
-            <a class="nav-link px-0 pt-3 pb-2" href="#">我要分享</a>
-          </li>
-          <li class="nav-item py-0 me-8">
-            <a class="nav-link px-0 pt-3 pb-2" href="#">愛心轉送</a>
-          </li>
-          <li class="nav-item py-0 me-8">
-            <a class="nav-link px-0 pt-3 pb-2" href="#">爸媽交流站</a>
-          </li>
-          <li class="nav-item py-0 me-0">
-            <a class="nav-link px-0 pt-3 pb-2" href="#">育兒資源</a>
-          </li>
-        </ul>
-
-        <a class="p-3 me-3" href="shoppingcar.html"
-          ><i class="text-primary-300" data-lucide="handbag"></i
-        ></a>
-        <div class="d-flex px-4 py-3">
-          <i class="me-2 text-primary-300" data-lucide="baby"></i>
-          <a class="text-gray-700" href="#">登入/註冊</a>
-        </div>
-      </div>
-
-      <!-- <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+    <!-- 2購物車 icon -->
+    <button class="border-0 shadow-none bg-white d-lg-none d-block">
+     <i class="text-primary-300 " data-lucide="handbag" style="width: 24px;height: 24px; "></i>
+    </button>
+    <!--  3收尋  search-->
+    <button
+      class="navbar-toggler border-0 shadow-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasSearch"
+      aria-controls="offcanvasSearch"
+      aria-label="Toggle search">
+      <i class="text-primary-300 " data-lucide="menu" style="width: 24px;height: 24px;"></i>
+    </button>
     </div>
-  </div>
+    <!--主選單 search -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true"  data-bs-backdrop="false" tabindex="-1" id="offcanvasMenu" aria-labelledby="Toggle menu">
+      <div class="offcanvas-header d-lg-none d-block border-4 border-bottom pt-0 pb-2 d-flex align-items-center">
+        <button class="me-2 mt-2 border-0 bg-white"  type="button "  data-bs-dismiss="offcanvas" aria-label="Close" id="offcanvasMenu" style="width:48px;height: 48px;">
+            <i class="text-gray-600"  data-lucide="chevron-left" style="width: 24px;height: 24px; "></i>
+        </button>
+        <form class=" mt-2 " style="width: 100%;" role="search">
+          <input type="text " style="width: 100%;" class="form-control py-3  rounded-pill " placeholder="輸入關鍵字..."  aria-label="Text input" type="submit"  aria-expanded="false" >
+            <button class=" btn btn-primary rounded-circle  position-absolute  translate-middle-y d-flex justify-content-center align-items-center" style="width:40px; height:40px;top: 32px;right: 26px;" >
+            <i class=" text-white" data-lucide="search" style="width:40px; height:40px;"></i>
+            </button>
+        </form>
+      </div>
+    <!-- 手機板 Menu選單 -->
+    <div class="d-lg-none d-block offcanvas-body">
+      <div class="mb-6">
+      <div class="mb-3 fw-bold">大家都在找</div>
+        <ul class="d-flex flex-wrap " style="gap: 12px;">
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">寶寶衣物</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">推車</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">奶瓶</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">玩具</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">書籍</a></li>
+        </ul>
+        </div>
+        <div>
+        <div class="mb-3 fw-bold">熱門分類</div>
+        <ul class="d-flex flex-wrap " style="gap: 12px;">
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">嬰兒服飾</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">男孩服飾</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">女孩服飾</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">玩具</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">育兒書籍</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">哺乳用品</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">推車/安全座椅</a></li>
+          <li class="py-2 px-5 bg-gray-100 paragraph-body-small rounded-4">
+            <a href="">媽媽用品</a></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+    
+  
+    <!-- 電腦版選單 -->
+    <div class=" d-none d-lg-flex align-items-center justify-content-between w-100">
+            <ul class="navbar-nav underline ms-auto me-3 gap-0">
+              <li class="nav-item py-0 me-8">
+                <a class="nav-link px-0 pt-3 pb-2" aria-current="page" href="#">找寶物</a>
+              </li>
+              <li class="nav-item py-0 me-8">
+                <a class="nav-link px-0 pt-3 pb-2 paragraph-body" href="#">我要分享</a>
+              </li>
+              <li class="nav-item py-0 me-8">
+                <a class="nav-link px-0 pt-3 pb-2 paragraph-body" href="#">愛心轉送</a>
+              </li>
+              <li class="nav-item py-0 me-8">
+                <a class="nav-link px-0 pt-3 pb-2 paragraph-body" href="#">爸媽交流站</a>
+              </li>
+              <li class="nav-item py-0 me-0">
+                <a class="nav-link px-0 pt-3 pb-2 paragraph-body" href="#">育兒資源</a>
+              </li>
+            </ul>
+            <a class="p-0 me-3 btn button-ghost-default-text rounded-circle border-0 d-flex align-items-center justify-content-center " style="width:48px;height: 48px;" href="shoppingcar.html">
+              <i class="i-icon-primary-300 " data-lucide="handbag" ></i>
+            </a>
+            <a class="d-flex px-4 py-3 btn button-ghost-default-text rounded-pill" href="#">
+              <i class="me-2 i-icon-primary-300 " data-lucide="baby"></i>
+              <div class=" " href="#">登入/註冊</div>
+            </a>
+    </div>
+    
+    
+    
+          
+    
+    
+        <!--搜尋 Offcanvas -->
+        <div
+          class="offcanvas offcanvas-end"
+          data-bs-scroll="true"
+          data-bs-backdrop="false"
+          tabindex="-1"
+          id="offcanvasSearch"
+          aria-labelledby="Toggle search">
+          <div class="offcanvas-header py-0 border-4 border-bottom">
+            <a class="navbar-brand p-0" href="#">
+              <img src="/BBStation/assets/Logotype-TgRNg5gD.svg" alt="logo" style="width: 100px; height: 32px;">
+            </a>
+          <button 
+              class="btn-close"
+              type="button "
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              id="offcanvasSearch" style="width:48px;height: 48px;">
+              </i>
+          </button>   
+          </div>
+          
+    
+    <!-- 手機板 選單 -->
+    <div class="d-lg-none d-block offcanvas-body">
+            <ul class="text-center mt-12">
+              <li class="nav-item py-3 mb-8 me-0">
+                <a class="paragraph-body" aria-current="page" href="#">找寶物</a>          
+              </li>
+              <li class="nav-item py-3 mb-8 me-0">
+                <a class="paragraph-body" href="#">我要分享</a>
+              </li>
+              <li class="nav-item py-3 mb-8 me-0">
+                <a class="paragraph-body" href="#">愛心轉送</a>
+              </li>
+              <li class="nav-item py-3 mb-8 me-0">
+                <a class="paragraph-body" href="#">爸媽交流站</a>
+              </li>
+              <li class="nav-item py-3 mb-8 me-0">
+                <a class="paragraph-body" href="#">育兒資源</a>
+              </li>
+            </ul>
+    
+            <a class=" sticky-bottom d-flex justify-content-center py-9 border-1 border-top bg-white" href="#">
+              <i class="me-2 i-icon-primary-300 " data-lucide="baby"></i>
+              <div class=" text-gray-700" href="#">登入/註冊</div>
+            </a>
+          </div>
+    
+    
+          </div>  
 </nav>
+    
+
+      
+    
+ 
     <!-- 表頭 -->
     <section >
       <div class=" bg-gray-50 title-bg-color">
@@ -128,21 +233,22 @@
               <i class=" text-gray-600" data-lucide="chevron-down" style="width: 24px;height: 24px;"></i>
             </button>
             <ul class="dropdown-menu mt-2 rounded-10 p-6" style="width: 212px">
-              <li><a class="dropdown-item mb-3 paragraph-body-small text-gray-800 fw-bold" href="#">分類</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">全部分類</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">嬰兒服飾</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">男孩服飾</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">玩具</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">育兒書籍</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">哺乳用具</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">推車/安全座椅</a></li>
-              <li><a class="dropdown-item py-3 px-2 text-gray-800" href="#">媽媽用品</a></li>
+              <li class="dropdown-item mb-3 px-2 paragraph-body-small text-gray-800 fw-bold bg-white">分類</li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">全部分類</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">嬰兒服飾</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">男孩服飾</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">玩具</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">育兒書籍</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">哺乳用具</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">推車/安全座椅</a></li>
+              <li><a class="dropdown-item py-3 px-2 text-gray-800 rounded-pill" href="#">媽媽用品</a></li>
             </ul>
             <!-- 輸入框 電腦版 -->
              <div class="dropdown flex-grow-1  position-relative">
             <input type="text " style="max-width: 100%;" class="form-control py-5 rounded-start rounded-pill " placeholder="輸入關鍵字..."  aria-label="Text input with dropdown button" type="submit" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 100%;">
             <button class=" btn btn-primary rounded-circle  me-2 position-absolute top-50 end-0 translate-middle-y me-2 d-flex justify-content-center align-items-center" style="width:48px; height:48px;" >
-            <i class=" text-white" data-lucide="search" style="width:32px; height:32px;"></i></button>
+            <i class=" text-white" data-lucide="search" style="width:32px; height:32px;"></i>
+            </button>
             <ul class="dropdown-menu w-100 mt-2 rounded-10 p-6" aria-labelledby="dropdownMenu2">
               <li><button class="dropdown-item mb-3 paragraph-body-small fw-bold text-gray-800" type="button">大家都在找</button></li>
               <li class="d-flex">
@@ -342,8 +448,8 @@
         <div class="row gx-4 d-flex">
           <!-- 01 -->
           <!-- 卡片 body 嬰兒推車Combi  -->
-        <div class="col-lg-3 col-6 "> 
-          <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container "> 
+          <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img  src="/BBStation/assets/product01-Kz_GH4ca.jpg"  alt="">
@@ -418,8 +524,8 @@
 
       <!-- 02 -->
           <!-- 卡片 body 嬰兒床+蚊帳組  -->
-        <div class="col-lg-3 col-6 ">
-         <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6  card-container">
+         <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product02-bHA1RNgV.jpg"  alt="">
@@ -494,8 +600,8 @@
 
       <!-- 03 -->
           <!-- 卡片 body 貝親奶瓶 160ml（2入）  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product03-BK42V_xT.jpg"  alt="">
@@ -570,8 +676,8 @@
       
       <!-- 04 -->
           <!-- 卡片 body 嬰兒學步車  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product04-DtmcCgom.jpg"  alt="">
@@ -646,8 +752,8 @@
 
       <!-- 05 -->
           <!-- 卡片 body 嬰兒床圍（4片組）  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product05-NQzBUjMa.jpg"  alt="">
@@ -722,8 +828,8 @@
 
     <!-- 06 -->
           <!-- 卡片 body 新生兒帽子手套組  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product06-Dy4jxT3V.jpg"  alt="">
@@ -798,8 +904,8 @@
 
     <!-- 07 -->
           <!-- 卡片 body 新生兒包巾組  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product07-BgwRyIZb.jpg"  alt="">
@@ -874,8 +980,8 @@
 
     <!-- 08 -->
           <!-- 卡片 body 多功能寶寶背巾  -->
-        <div class="col-lg-3 col-6 ">
-           <a class="product-card-link d-lg-flex align-items-lg-start" href="#" >
+        <div class="col-lg-3 col-6 card-container">
+           <a class=" d-lg-flex align-items-lg-start" href="#" >
           <div  class="card  product-rounded card-shadow-gray position-relative mb-4 border border-1 border-lg-0  ">
             <div class="product-img">
             <img class="" src="/BBStation/assets/product08-BWJLjmD3.jpg"  alt="">
@@ -1011,8 +1117,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback01-CxP2WYhR.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="和Sandy交換的二手推車保持得很好哦！">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1056,8 +1162,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback02-C6F5_kKL.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="【尋物】小一課外讀本">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1102,8 +1208,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback03-BhzVdOEf.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="和小Q爸の生活交換的嬰兒防撞床圍護欄">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1145,8 +1251,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback04-D6efgIIU.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="兒童安撫搖椅交換">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1190,8 +1296,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback05-Cy3r6y-5.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="...">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1236,8 +1342,8 @@
                         <div class="col-md-5" style="width: 134px;">
                           <div class=" rounded-5 overflow-hidden"  >
                               <img src="/BBStation/assets/feedback06-DhKKtaBH.jpg" class="card-img-top" style="width: 134px;height: 134px;"  alt="和Kiven交換的寶寶床">
-                              <div class="card-body text-center bg-primary-400 text-white">
-                                <a class="card-text py-3 " href="#" >前往賣場 </a>
+                              <div class="card-body text-center primary-default-text ">
+                                <a class="card-text py-3" href="#" >前往賣場 </a>
                               </div>
                             </div>
                         </div>
@@ -1443,18 +1549,22 @@
               <ul class="d-lg-flex pt-10 pb-lg-16 mb-lg-0">
                 <li class="me-lg-12">
                   <div class="d-lg-flex justify-content-between ">
-                      <a class="d-lg-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">我也想要分享</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">我也想要分享</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                       </div>
                     </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多交換者回饋</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多交換者回饋</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                       </div>
                 </li>
               </ul>
@@ -1506,22 +1616,24 @@
                 </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                   </div>
                 </li>
               </ul>
               <!-- 電腦板-影片 -->
-              <ul class="row  mb-lg-0">
+              <ul class="row  mb-lg-0 resource-group">
                 <!-- 01-新生兒黃金48小時怎麼照顧？ -->
                 <li class="col-4">
-                  <div class="card rounded-10  card-shadow-gray" >
-                    <div class="position-relative resource-img">
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
+                    <div class=" resource-img">
                       <img  src="/BBStation/assets/resource01-DKiN2GIo.jpg" class="card-img-top rounded-10 rounded-bottom-0 product-img" alt="...">
                      <a class="position-absolute top-50 start-50 translate-middle" href="#">
-                      <i class=" text-white " data-lucide="circle-play" style="width: 40px;height: 40px;opacity: .25;" ></i>
+                      <i class="circle-play" data-lucide="circle-play" style="width: 40px;height: 40px;" ></i>
                     </a>
                      </div>
                     <a href="#" class="p-lg-5 d-lg-flex">
@@ -1539,11 +1651,11 @@
 
                 <!-- 02-如何幫寶寶建立作息 -->
                 <li class="col-lg-4">
-                  <div class="card rounded-10 card-shadow-gray" >
-                    <div class="position-relative resource-img">
-                      <img src="/BBStation/assets/resource02-DOi1lzkq.jpg" class="card-img-top rounded-10 rounded-bottom-0" alt="...">
-                     <a href="#" class="position-absolute top-50 start-50 translate-middle" >
-                      <i class=" text-white " data-lucide="circle-play" style="width: 40px;height: 40px;opacity: .25;" ></i>
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
+                    <div class=" resource-img">
+                      <img src="/BBStation/assets/resource02-DOi1lzkq.jpg" class="card-img-top rounded-10 rounded-bottom-0 product-img" alt="...">
+                     <a  class="position-absolute top-50 start-50 translate-middle" href="#">
+                      <i class="circle-play" data-lucide="circle-play" style="width: 40px;height: 40px;"  ></i>
                     </a>
                      </div>
                     <a href="#" class="p-lg-5 d-lg-flex">
@@ -1561,11 +1673,11 @@
 
                 <!-- 03-寶寶副食品準備大全 -->
                 <li class="col-lg-4 ">
-                  <div class="card rounded-10 card-shadow-gray" >
-                    <div class="position-relative resource-img">
-                      <img src="/BBStation/assets/resource03-lB4z4TRd.jpg" class="card-img-top rounded-10 rounded-bottom-0" alt="...">
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
+                    <div class=" resource-img">
+                      <img src="/BBStation/assets/resource03-lB4z4TRd.jpg" class="card-img-top rounded-10 rounded-bottom-0 product-img" alt="...">
                      <a class="position-absolute top-50 start-50 translate-middle" href="#">
-                      <i class=" text-white " data-lucide="circle-play" style="width: 40px;height: 40px;opacity: .25;" ></i>
+                      <i class="circle-play" data-lucide="circle-play" style="width: 40px;height: 40px;"  ></i>
                     </a>
                      </div>
                     <a href="#" class="p-lg-5 d-lg-flex">
@@ -1573,13 +1685,18 @@
                         <img class="border border-1 rounded-circle " src="/BBStation/assets/avatar09-Cj-4W2b_.jpg" alt="Dr. 林育寶" style="width: 48px; height: 48px;">
                       </div>
                       <div>
-                        <h3 class="h6 fw-bold  mb-lg-1 text-truncate product-card-title">寶寶副食品準備大全</h3>
+                        <h3 class="h6 fw-bold mb-lg-1 text-truncate product-card-title">寶寶副食品準備大全</h3>
                         <p class="mb-lg-1 text-gray-600 paragraph-body-small">小米媽育兒日記</p>
                         <p class="text-gray-600 paragraph-body-small">觀看次數： 723K・2023-04-15</p>
                       </div>
                     </a>
                   </div>
                 </li>
+               
+                <button class="right-button border-0 p-lg-3 d-lg-flex justify-content-lg-center align-items-lg-center  rounded-circle  card-shadow-sm-gray " id="scroll" style="width: 40px;height: 40px;">
+                  <i   data-lucide="chevron-right" style="width: 16px;height: 16px; "></i>
+                </button>
+                
                 
 
 
@@ -1587,26 +1704,28 @@
           </div>
           <!-- 電腦版 育兒文章 -->
           <div>
-          <ul class="d-flex justify-content-between align-items-center ">
+          <ul class="d-flex justify-content-between align-items-center">
                 <li>
                   <div class="text-gray-800 h3 fw-bold bg-gray-200">育兒文章</div>
                 </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                   </div>
                 </li>
               </ul>
           </div>
           <div>
             <!-- 電腦版-文章 -->
-              <ul class="row mb-0 pb-12">
+              <ul class="row mb-0 pb-12  resource-group">
                 <!-- 01-三歲以前的黃金語言期，爸媽可以做什麼？ -->
                 <li class="col-lg-4 ">
-                  <div class="card rounded-10  card-shadow-gray " >
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
                     <div class="resource-img">
                       <img src="/BBStation/assets/article01-BX5ESL_h.jpg" class="card-img-top rounded-10 rounded-bottom-0" alt="...">
                     </div>
@@ -1631,7 +1750,7 @@
 
                 <!-- 02-如何幫助寶寶適應幼兒園生活 -->
                 <li class="col-lg-4 ">
-                  <div class="card rounded-10  card-shadow-gray" >
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
                     <div class="resource-img">
                       <img src="/BBStation/assets/article02-BuauDBm-.jpg" class="card-img-top rounded-10 rounded-bottom-0" alt="...">
                     </div>
@@ -1656,7 +1775,7 @@
 
                 <!-- 03-寶寶副食品初體驗！新手爸媽注意事項 -->
                 <li class="col-lg-4 ">
-                  <div class="card rounded-10  card-shadow-gray" >
+                  <div class="card rounded-10  card-shadow-gray resource-card" >
                     <div class="resource-img">
                       <img src="/BBStation/assets/article03-DcCf1BOV.jpg" class="card-img-top rounded-10 rounded-bottom-0" alt="...">
                     </div>
@@ -1678,6 +1797,10 @@
                     </a>
                   </div>
                 </li>
+                <button class="right-button border-0 p-lg-3 d-lg-flex justify-content-lg-center align-items-lg-center  rounded-circle  card-shadow-sm-gray " id="scroll" style="width: 40px;height: 40px;">
+                  <i   data-lucide="chevron-right" style="width: 16px;height: 16px; "></i>
+                </button>
+
               </ul>
           </div>
 
@@ -1863,55 +1986,36 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <section>
-          <button type="button " class="btn rounded-circle position-relative button-Ghost-default-badge">
-             <i  class=" text-primary-300" data-lucide="handbag"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              1
-              <span class="visually-hidden">unread messages</span>
-            </span>
-          </button> -->
-     
-
-
-    <footer>
-  <div class="container">
-    <div class="d-flex justify-content-between border-bottom py-8">
-      <ul class="nav nav-underline">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">聯絡我們</a>
+    <footer class="bg-primary-400">
+  <div class="container-lg d-lg-block d-none ">
+    <!-- 電腦版 footer -->
+    <div class=" border-bottom py-8 ">
+      <div class="d-flex justify-content-between">
+      <div class="col-4 py-8">
+      <ul class="nav nav-underline d-flex justify-content-star gap-4">
+        <li class="nav-item  me-0 ">
+          <a class=" text-center  " aria-current="page" href="#">聯絡我們</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">關於我們</a>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">關於我們</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">隱私條款</a>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">隱私條款</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">合作提案</a>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">合作提案</a>
         </li>
       </ul>
-      <a class="" href="index.html">
+      </div>
+
+      <div class="col-4 py-8">
+      <a class="d-flex justify-content-center" href="index.html">
         <img src="/BBStation/assets/Logotype-1%E5%AD%97%E7%99%BD%E8%89%B2-CS7zCI5K.svg" alt="logo" />
       </a>
-      <ul class="d-flex aline-center my-0">
+      </div>
+
+      <div class="col-4 py-8">
+      <ul class="d-flex justify-content-end my-0">
         <li>
           <a class="me-4" href="#">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAR+SURBVHgB1Zo9TBxHFMf/M3t3IoY4Z0UkCBecJacwRPHRuEKw7lyChB25MvSRcDp3PrqUILn3pYmFsGSXdD4sqqRg84FTBClLASJxHB8xEIdjd/Lewq7ui+Vudjmvf9Lpbmdnl/dm/m/mzQwCMWA+XM06XelxIVReCDlARXlIZKHo46NgQyhbuepHpZRlwCmVbg/biIiAJmy025OZEUqZ9BoTeliu48xHcaZtBwLDgbs1LRydonAOZtt1pC0HRhfX7p+B4TUogcLzm0OzrdZvyQHz0WpOGZknYG13Bpt643orvSFPqzD6+Jc7KpVZReeMZ7jBVs3vfho/rWKoA55kXFE8S8mEkFUp4wnbEFbpRAl5xisUkADC4qKpA9x17D0ShJJy6vnklW/ryxsc8AKWNf9uZBNGmQJ7uD6wG2KAgudZAo1nsscjYQ01DhwHTA7JJT+68HOhuiCQ0PFY/zuST1nsHVwqTQ+X+SLoAVemC3g/yLrnUnf9C68H4mr9nrTEyMXzGOnvweXsB+jrTnvl66/fYnv/ACubb7C0sYMYCHohdXRtmIgIG33v2kVywmi4d/lCl/dh56aGelFcexnVEb8XCp4DNObP0MijzVf5TzH52cct1e3rzniOcu8UX/wFXYQ0xrzvqPKZGuz1WlWHx7+9wgPrD+hCMrqQiiKfG7mPQo1fsstk5N9YL78Nyko3B4Pf3GvWn/tY2XoDHZxuY1y6htTOMk8z/psftmqMb8a9a/1e8OtAiWZe0jB0FRpw6/edy5x4n+XRChz0+d5uaCFFjoP4EjQY6T8fen+9/F/we25sAPlPTjaSG0NHRgLiKvWdGIAG/hjfCmHGMzxnaJLVE5/3R7sQF+00Rh3ZFGLGXHwRWlY9CsWBJCGVocH2fgVxsb2n/y4JpbTmdM5v4mK9/C80sVOUQVg0lLYdyNbLPcptPmwo9yXSjmxWNnehg4La4CC2ocGSvYPdioOosHyWNrRUTGsAZUnywIIGbDxnlVGJ8g4lhSWRrjyFJpzn8Ef/+Vf6rU8YjlGSpQlamglRgiYPrG0tJ9jwKJkoYZVuX7G9iUy5zjIiwE5w4tbK0LpbcY/qf7+FKLhQ8/ztTWQyczinDjMzUbZTOPtc2fzHW3XdyGUbjOas1FtS2q+966iwfPg72JXg7Qo6XbmP9wGJ4vLk0PTRT7+MekF3Vu40oiKDfdLAAQ5m5brzSDi04TzLwRtc11cYW1zjfdFOngW0gbCXbw3WrF8a0mlxKCcSKSXBm7vien1xgwPcPXTy+DUShnCd6Wrp+DRd0JRufV5krSEheLr/8oumGUPoIZ+5sFag05F3OrQeGT9UOPE+TsFcoNMaaTzs+JkBa56kzGoIr9YC5qNfafdOPaOkI4fOYAlHTjTTfD1tHXSfuaS41V3Mh0mm8ZE24d5wU05BKHEHcXFsOPYP5vyDi9Yf1YQdoYzKVPyvB7TBBA1oSbgsFaXyGob7aDtQje8Mpbg0g4s87ZjlUL3O5olRYYfkZ1HuTjm8sLBXeaprdDX/A2nT3o2bcLxVAAAAAElFTkSuQmCC" alt="fb-logo" />
@@ -1928,11 +2032,70 @@
           </a>
         </li>
       </ul>
-    </div>
-    <div class="copyright py-8">
+      </div>
+      </div>
+
+      <div class="col-12 copyright py-8 border-top border-1">
       <p>版權所有 © 2025 B.B. Station</p>
     </div>
-  </div>
+    </div>
+    </div>
+
+
+
+    <!-- 手機板 footer -->
+    <div class="justify-content-between border-bottom py-12  d-block d-lg-none">
+      <!-- LOGO -->
+        <div class="col-12 py-8">
+      <a class="d-flex justify-content-center" href="index.html">
+        <img src="/BBStation/assets/Logotype-1%E5%AD%97%E7%99%BD%E8%89%B2-CS7zCI5K.svg" alt="logo" />
+      </a>
+      </div>
+    
+     <div class="col-12 py-4 px-3">
+      <ul class="nav nav-underline d-flex justify-content-between  ">
+        <li class="nav-item  me-0 ">
+          <a class=" text-center  " aria-current="page" href="#">聯絡我們</a>
+        </li>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">關於我們</a>
+        </li>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">隱私條款</a>
+        </li>
+        <li class="nav-item me-0 ">
+          <a class=" text-center " href="#">合作提案</a>
+        </li>
+      </ul>
+      </div>
+      <div class="col-12 py-8 ">
+      <ul class="d-flex justify-content-center my-0">
+        <li>
+          <a class="py-0 me-4" href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAR+SURBVHgB1Zo9TBxHFMf/M3t3IoY4Z0UkCBecJacwRPHRuEKw7lyChB25MvSRcDp3PrqUILn3pYmFsGSXdD4sqqRg84FTBClLASJxHB8xEIdjd/Lewq7ui+Vudjmvf9Lpbmdnl/dm/m/mzQwCMWA+XM06XelxIVReCDlARXlIZKHo46NgQyhbuepHpZRlwCmVbg/biIiAJmy025OZEUqZ9BoTeliu48xHcaZtBwLDgbs1LRydonAOZtt1pC0HRhfX7p+B4TUogcLzm0OzrdZvyQHz0WpOGZknYG13Bpt643orvSFPqzD6+Jc7KpVZReeMZ7jBVs3vfho/rWKoA55kXFE8S8mEkFUp4wnbEFbpRAl5xisUkADC4qKpA9x17D0ShJJy6vnklW/ryxsc8AKWNf9uZBNGmQJ7uD6wG2KAgudZAo1nsscjYQ01DhwHTA7JJT+68HOhuiCQ0PFY/zuST1nsHVwqTQ+X+SLoAVemC3g/yLrnUnf9C68H4mr9nrTEyMXzGOnvweXsB+jrTnvl66/fYnv/ACubb7C0sYMYCHohdXRtmIgIG33v2kVywmi4d/lCl/dh56aGelFcexnVEb8XCp4DNObP0MijzVf5TzH52cct1e3rzniOcu8UX/wFXYQ0xrzvqPKZGuz1WlWHx7+9wgPrD+hCMrqQiiKfG7mPQo1fsstk5N9YL78Nyko3B4Pf3GvWn/tY2XoDHZxuY1y6htTOMk8z/psftmqMb8a9a/1e8OtAiWZe0jB0FRpw6/edy5x4n+XRChz0+d5uaCFFjoP4EjQY6T8fen+9/F/we25sAPlPTjaSG0NHRgLiKvWdGIAG/hjfCmHGMzxnaJLVE5/3R7sQF+00Rh3ZFGLGXHwRWlY9CsWBJCGVocH2fgVxsb2n/y4JpbTmdM5v4mK9/C80sVOUQVg0lLYdyNbLPcptPmwo9yXSjmxWNnehg4La4CC2ocGSvYPdioOosHyWNrRUTGsAZUnywIIGbDxnlVGJ8g4lhSWRrjyFJpzn8Ef/+Vf6rU8YjlGSpQlamglRgiYPrG0tJ9jwKJkoYZVuX7G9iUy5zjIiwE5w4tbK0LpbcY/qf7+FKLhQ8/ztTWQyczinDjMzUbZTOPtc2fzHW3XdyGUbjOas1FtS2q+966iwfPg72JXg7Qo6XbmP9wGJ4vLk0PTRT7+MekF3Vu40oiKDfdLAAQ5m5brzSDi04TzLwRtc11cYW1zjfdFOngW0gbCXbw3WrF8a0mlxKCcSKSXBm7vien1xgwPcPXTy+DUShnCd6Wrp+DRd0JRufV5krSEheLr/8oumGUPoIZ+5sFag05F3OrQeGT9UOPE+TsFcoNMaaTzs+JkBa56kzGoIr9YC5qNfafdOPaOkI4fOYAlHTjTTfD1tHXSfuaS41V3Mh0mm8ZE24d5wU05BKHEHcXFsOPYP5vyDi9Yf1YQdoYzKVPyvB7TBBA1oSbgsFaXyGob7aDtQje8Mpbg0g4s87ZjlUL3O5olRYYfkZ1HuTjm8sLBXeaprdDX/A2nT3o2bcLxVAAAAAElFTkSuQmCC" alt="fb-logo" />
+          </a>
+        </li>
+        <li class="py-0">
+          <a class="me-4" href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVJSURBVHgB1ZpNTBtHFMffrI1LjZs6aUkRqIqRaKXEVbNccimCzS1HkChtTgGpx0iht9xipB44gtR73EsjBBK5VEK9xESc0gPbD6hUUsU5gGjSJCYBFGF2J/Mfs6v1xy722DjOT1rh3Z2133vzf28+FkYNwLi9Grfa24YZ4zpj2jlxSSeN4sTF4cApS4xnuc1/55ybIbIymav9WaoTRorAaDsWucE4N8TXGKSGaVvWbD3O1OyAazjRZFGE6yfNrIOpWh2pyYHB+bVbJ2B4EZxR6v7Xyalq21flgHFnNcFDkUWCtptDVvTG5Wp6QzuuweDCX9d4OLJKzTMeIGCrxs9/DB/XMNABKRmbpU9SMgHEeTi0CBuCGvlKSBrPKUUtQFBeVHQAXQfvqYXgmjZ+f/T8T6XXyxyQCQvNvx3ZBJETid1fmthlOSCS514LGg/iR5WwiCIHjhImQa2LPjj3Z8p7wZXQUa1/RK1Pju0d9GYm+nM4cXvA1tpS9G4Qt6PhSedE9kCjoh9r02ig5xQNdMeoL/4+dXW0yesPX7ym7f0DWtl8RUuPd6gBuL0QLpyHDKoTGH3zUo9wIlR2r+90uzzg3Hiyk9JrT+t1xOmFlHRA1PwbovIoc13/hEY/+6iqtl0dEekoeie9/j+pwrTQkPxbr3zGL3TKqKqwsPGMfjT/I1WEjE6H65HPlcSHRcbDIMhjN29XbI+oX0nEpdMAvWY+2aeVrVekgtURGg7bIU1XXZZ5jU+vP6GFf54Lo86Q3tlRsf32fl5EfBvLS/fZm5e66dtfNnydDkJMNPWwMP4iKYDod0Uj7vnSox0ZUT85Pcy9Jj0WkdGH9kc/PyMTHsdA9ymR1DmqGY0lMA70kgL4US+IrlM2ASK6lM3JA/d28xZt7x3IaoTP3ogP9MRIBUbsonCAnSMFvMaWsr2Xp+9+/Vcaj9o/mcnK6uMnLYwZisSPXZH50Rdv972HRNbPRmnGSNAPX31K+sdRkR/PfNsHBeMY1B0IAhLxRhXOqiRpNWhCSArZU9C8HwM9H8iSaj4tlMiFjedCPlHf9khwVcLEuRjTWc3zf8xvuqKVux61Hgk7/WBT9gYqE675gbaKZMOiJJuilNacyIgsIu2AiRyS12E8eVYeVGZs3m3vftfmLqnAiT/GXChLCqC67OqWO3nDAAapICGh/1ikPL0gFSQ42jrPwSGlMQDY3AyLnzFV5nGQxvSDLVllgBPt6d+2fJ9B1CGl63qXew0OqcI1ZjJjcTXO85EXpAiMQUS9eKXkBb3inW5j+pFeq2NGamm9cho0NL8uFvLYZVYDSepM0Kql3pmowFweS/YX1gO2tSz29Q1SBDJA1OGIX2VywHiA6qQ6A3Wwic/ib2FJCRkdijVBA7ZToHFUJ0z0+uLvyWsYM5DASPyVzZcNGdQgn8zV81l3Jo3tCtELt+hdQKP08mhyovDRuRY5nFEdlZsNy2vuPqnrQGakP8dte5ZaHLHhPAXpuOelDYbm17Av2sx3ATXAsstjF4rWL2XDJTvURlpSSgybu+xy6eUyB2Rmc/49tRjMtia80nGouB7IjH2RhtaoRZC6/+bLuxXvBT1ozK2lxNuRt1paC8YnU7736RiMOfG2Rgvdbvo7A2heSBlqCG5WBcadv8XuHb8nJh0Jag6mGGlHKmm+lJr2tE5cUoi6TbNBkil/pEbQG3bYSjHOrlGjODKc9g9mnBcX1T+qCByhkGVw/OuB2GAiBcSScFnjLKNiuIOyA14cZ8QUV4zgTOy1sgR519kYGDntCPmZYu6eFVshJu3l76oa7eUNB308R47lRr8AAAAASUVORK5CYII=" alt="ig-logo" />
+          </a>
+        </li>
+        <li class="py-0">
+          <a href="#">
+            <img src="data:image/png;base64,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" alt="line-logo" />
+          </a>
+        </li>
+      </ul>
+      </div>
+
+
+     <div class="col-12 copyright pt-8 pb-12 border-top border-1">
+      <p>版權所有 © 2025 B.B. Station</p>
+    </div>
+    
+    </div>
+
+
 </footer>
     
     
