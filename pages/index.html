@@ -66,7 +66,8 @@
              <div class="dropdown flex-grow-1  position-relative">
             <input type="text " style="max-width: 100%;" class="form-control py-5 rounded-start rounded-pill " placeholder="輸入關鍵字..."  aria-label="Text input with dropdown button" type="submit" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 100%;">
             <button class=" btn btn-primary rounded-circle  me-2 position-absolute top-50 end-0 translate-middle-y me-2 d-flex justify-content-center align-items-center" style="width:48px; height:48px;" >
-            <i class=" text-white" data-lucide="search" style="width:32px; height:32px;"></i></button>
+            <i class=" text-white" data-lucide="search" style="width:32px; height:32px;"></i>
+            </button>
             <ul class="dropdown-menu w-100 mt-2 rounded-10 p-6" aria-labelledby="dropdownMenu2">
               <li><button class="dropdown-item mb-3 paragraph-body-small fw-bold text-gray-800" type="button">大家都在找</button></li>
               <li class="d-flex">
@@ -1367,18 +1368,22 @@
               <ul class="d-lg-flex pt-10 pb-lg-16 mb-lg-0">
                 <li class="me-lg-12">
                   <div class="d-lg-flex justify-content-between ">
-                      <a class="d-lg-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">我也想要分享</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">我也想要分享</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                       </div>
                     </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多交換者回饋</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多交換者回饋</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                       </div>
                 </li>
               </ul>
@@ -1430,10 +1435,12 @@
                 </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                   </div>
                 </li>
               </ul>
@@ -1522,10 +1529,12 @@
                 </li>
                 <li>
                   <div class="d-flex justify-content-between ">
-                      <a class="d-flex align-items-center" href="#">
-                        <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
-                        <i class="text-white bg-primary-400 "  style="width:32px; height: 16px;border-radius: 12px;" data-lucide="move-right"></i>
-                      </a>
+                      <a class="d-flex align-items-center  more-link" href="#">
+                          <h3 class="paragraph-body text-primary-500 me-1">看更多</h3>
+                          <span class="icon-wrapper  d-flex align-items-center justify-content-center " style="width:32px; height:16px; border-radius:12px;">
+                            <i class="text-white icon-move " data-lucide="move-right" style="width: 16px;height: 16px;"></i>
+                          </span>
+                        </a>
                   </div>
                 </li>
               </ul>
@@ -1795,34 +1804,6 @@
         </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <section>
-          <button type="button " class="btn rounded-circle position-relative button-Ghost-default-badge">
-             <i  class=" text-primary-300" data-lucide="handbag"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              1
-              <span class="visually-hidden">unread messages</span>
-            </span>
-          </button> -->
-     
-
 
     <%- include('./layout/footer'); -%>
     
