@@ -43,3 +43,15 @@
 .underline .nav-link.active::after {
   transform: translateX(-50%) scaleX(1);
 }
+
+.i-icon-primary-300{
+  color: $primary-300;
+}
+
+.btn-close{
+  color: $primary-300 !important;
+  &:hover{
+    border-radius: none !important;
+  }
+  
+}

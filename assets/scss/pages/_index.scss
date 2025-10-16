@@ -162,7 +162,40 @@
     border-radius: 40px;
     overflow: hidden;
 }
+
+
+
+//寶物分享 上弧圖
+.section04_background_desktop{
+    background-image: url(/assets/images/index/section04_background_desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: none;
+}
+
+//寶物分享 車廂
+.train_car{
+    background-image: url(/BBStation/assets/images/index/train_wheel.png), url(/BBStation/assets/images/index/train_wheel.png), url(/BBStation/assets/images/index/train_car.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 80px 80px, 80px 80px, 100%;
+    background-position: 48px 275px, 289px 275px, 0px;
+}
+.lucide-star {
+  fill: currentColor;   /* 使用文字顏色做為填滿色 */
+}
+
+.primary-default-text{
+  color: #fff; // 預設字色
+  background-color:  #3FAAD5;
+  &:hover{
+    background-color: #258fc1; // hover 背景色  
+  }
+}
+
+
 //更多商品
+//按鈕箭頭
 .icon-wrapper {
   overflow: hidden; /* 防止箭頭超出邊界 */
   background-color: $primary-400;
@@ -225,33 +258,24 @@
   visibility: visible;
 }
 
-//寶物分享 上弧圖
-.section04_background_desktop{
-    background-image: url(/assets/images/index/section04_background_desktop.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    box-shadow: none;
-}
 
-//寶物分享 車廂
-.train_car{
-    background-image: url(/BBStation/assets/images/index/train_wheel.png), url(/BBStation/assets/images/index/train_wheel.png), url(/BBStation/assets/images/index/train_car.png);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 80px 80px, 80px 80px, 100%;
-    background-position: 48px 275px, 289px 275px, 0px;
-}
-.lucide-star {
-  fill: currentColor;   /* 使用文字顏色做為填滿色 */
-}
 //更多商品 電腦版 hover
- .card .product-card-link {
+ 
+ .card-container{
         .product-img{
         position: relative;
         img{
             display: block;
             width: 100%;
+        }}
+        .product-card-title {
+        color: $gray-800;}
+        
+        &:hover{
+        .product-card-title {
+        color: $primary-500;
         }
+       .product-img{
         &::after {
         content: "";
         position: absolute;
@@ -261,16 +285,11 @@
         }
         &:hover::after {
         opacity: 1;
+        } }
         }
-        }  
+    
 }
- .product-card-title {
-        display: block;
-        color: $gray-800;
-        &:hover{
-           color: #189EC7;
-        }
-        }
+ //
 .scroll-button button {
   color: $gray-500;
   background-color: $white;
@@ -317,25 +336,63 @@
   height: 63px; /* 固定高度 */
 }
 
-
-.resource-img{
-    position: relative;
+.resource-card{
+    .product-card-title {
+        color: $gray-800;
+    }
+    .resource-img{
+        position: relative;
         img{
             display: block;
             width: 100%;
+        }}
+    .circle-play{
+            color: #fff;
+            opacity: .25;
+            z-index: 1004;
         }
-        &::after {
-        content: "";
+    &:hover{
+        .product-card-title {
+        color: $primary-500;
+        }
+    .resource-img { 
+            &::after {
+            content: "";
+            position: absolute;
+            inset: 0; /* top, right, bottom, left = 0 */
+            background-color: rgba(0, 0, 0, 0.4); /* 黑色半透明 */
+            opacity: 1;
+            border-radius: 40px 40px 0px 0px;
+            z-index: 2;
+        }
+            }
+        .circle-play{
+            color: #fff;
+            opacity: 1;
+            z-index:1005;
+        }
+        }
+    }
+.resource-group{
+    position: relative;
+    .right-button{
         position: absolute;
-        inset: 0; /* top, right, bottom, left = 0 */
-        background-color: rgba(0, 0, 0, 0.4); /* 黑色半透明 */
-        opacity: 0;
-        border-radius: 40px 40px 0px 0px;
-        }
-        &:hover::after {
-        opacity: 1;
-        }
+        right:-8px;
+        top:50%;
+        transform: translateY(-50%);
+        z-index: 1006;
+        background-color: $white;
+        color: $black;
+    }
+    &:hover{
+        .right-button{
+            color: $gray-800;
+            background-color: #F2F2F4;
+            box-shadow: inset 0px 4px 0px 0px #00000033;
+    }
+    }
 }
+
 
 @media (max-width:768px){
     //手機板-熱門收尋
