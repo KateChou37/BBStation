@@ -44,6 +44,18 @@
     color: $gray-600;
 }
 }
+//收尋列 電腦版
+.btn-text-hover{
+  color: $gray-800;
+  background-color: $gray-100; 
+  &:hover{
+    background-color: $gray-200;
+  }
+}
+
+
+
+
 // 收尋攔
 .classification{
     width: 212px;
