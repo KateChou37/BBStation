@@ -1,7 +1,15 @@
+body {
+  background-color: var(--bs-gray-50);
+}
+
 //購物流程步驟-試用
 .checkout-steps {
-  padding: 2.5rem 0;
-  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 2.5rem 0;
+
+  // border-bottom: 1px solid #dee2e6;
 }
 
 .step-container {
@@ -25,47 +33,48 @@
 }
 
 .step-number {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   border: 2px solid #dee2e6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #6c757d;
-  background-color: #fff;
+  margin: 0 auto 0;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #787f85;
+  background-color: #fafafa;
   transition: all 0.3s ease;
 }
 
 .step-item.active .step-number {
-  border-color: #0d6efd;
-  background-color: #0d6efd;
-  color: #fff;
+  border-color: #189ec7;
+  background-color: #fafafa;
+  color: #189ec7;
 }
 
 .step-item.completed .step-number {
-  border-color: #198754;
-  background-color: #198754;
-  color: #fff;
+  border-color: #189ec7;
+  background-color: #fafafa;
+  color: #189ec7;
 }
 
 .step-label {
-  font-size: 0.875rem;
-  color: #6c757d;
+  font-size: 14px;
+  font-weight: 400;
+  color: #465668;
   margin: 0;
   white-space: nowrap;
 }
 
 .step-item.active .step-label {
-  color: #0d6efd;
-  font-weight: 600;
+  color: #189ec7;
 }
 
 .step-item.completed .step-label {
-  color: #198754;
+  color: #189ec7;
 }
 
 /* 連接線 */
@@ -73,30 +82,34 @@
   width: 80px;
   height: 2px;
   background-color: #dee2e6;
-  margin: 0 0.5rem;
+  margin: 0 8px;
   position: relative;
-  top: -12px;
+  top: -15px;
 }
 
 .step-item.completed ~ .step-item .step-line {
-  background-color: #198754;
+  background-color: #189ec7;
 }
 
 .step-item.active .step-line {
-  background: linear-gradient(to right, #198754 50%, #dee2e6 50%);
+  background: linear-gradient(to right, #189ec7 50%, #dee2e6 50%);
 }
 
 /* RWD 響應式設計 */
 @media (max-width: 768px) {
   .step-container {
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: row;
+    margin: 0 auto;
+    // gap: 1.5rem;
   }
 
   .step-line {
-    width: 2px;
-    height: 40px;
-    margin: 0.5rem 0;
+    width: 24px;
+    height: 2px;
+    margin: 0;
     top: 0;
   }
 
@@ -129,6 +142,7 @@
 }
 
 // 購物正式
+//頭像
 .rounded-circle {
   width: 48px;
   height: 48px;
@@ -170,6 +184,10 @@ td {
   width: 198px;
   text-align: center;
   vertical-align: middle;
+  font-size: 16px;
+}
+.shopping-item p {
+  font-weight: 700;
 }
 .item-status {
   padding: 4px 12px;

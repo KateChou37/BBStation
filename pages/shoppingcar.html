@@ -9,9 +9,13 @@
   </head>
   <body>
     <%- include('./layout/header'); -%>
-    <div class="container px-0 mt-16">
-      <!-- 購物流程步驟-試用 -->
-      <div class="checkout-steps" aria-label="購物流程">
+    <!-- 購物流程步驟 分隔線全滿版 -->
+    <div class="px-0 mt-16">
+      <!--mt-16:為了推出表頭範圍 -->
+      <div
+        class="checkout-steps py-10 border-bottom border-16"
+        aria-label="購物流程"
+      >
         <ol class="step-container list-unstyled m-0">
           <!-- 步驟 1：確認購物車 -->
           <li class="step-item active">
@@ -49,61 +53,14 @@
           </li>
         </ol>
       </div>
-      <!-- 購物流程步驟0 -->
-      <div class="d-flex justify-content-center py-10 border-bottom border-16">
-        <div class="text-center">
-          <span
-            class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2"
-          >
-            01
-          </span>
-          <p class="car-step">確認​購物​車</p>
-        </div>
-        <div class="d-flex text-end">
-          <div class="mx-2">
-            <img class="" src="/assets/images/購物車/Rect.png" alt="橫線" />
-          </div>
-          <div>
-            <span
-              class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2"
-            >
-              02
-            </span>
-            <p class="car-step">付款​與運送​方式</p>
-          </div>
-        </div>
-        <div class="d-flex text-center">
-          <div>
-            <img class="" src="/assets/images/購物車/Rect.png" alt="橫線" />
-          </div>
-          <div>
-            <span
-              class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2"
-            >
-              03
-            </span>
-            <p class="car-step">填寫寄送​資料​</p>
-          </div>
-        </div>
-        <div class="d-flex text-center">
-          <div>
-            <img class="" src="/assets/images/購物車/Rect.png" alt="橫線" />
-          </div>
-          <div>
-            <span
-              class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2"
-            >
-              04
-            </span>
-            <p class="car-step">完成​訂購​</p>
-          </div>
-        </div>
-      </div>
+    </div>
+    <!-- 購物車主體 -->
+    <div class="container px-0">
       <!-- 購物車內容 -->
-      <div class="pt-16 pb-20">
-        <!-- 訂單確認 -->
+      <div class="mt-16 mb-20">
+        <!-- 一、訂單確認 -->
         <div>
-          <h3 class="mb-12">購物車｜訂單確認</h3>
+          <h3 class="mb-12 fw-bold">購物車｜訂單確認</h3>
           <div class="mb-12">
             <table class="table table-hover">
               <thead class="table-light form-headfoot">
@@ -113,14 +70,14 @@
                       class="rounded-circle m-3"
                       src="/assets/images/購物車/Photo.png"
                       alt="baby"
-                    />雙寶媽
+                    /><span>雙寶媽</span>
                   </th>
-                  <th scope="col">商品訊息</th>
-                  <th scope="col">狀態</th>
-                  <th scope="col">單價</th>
-                  <th scope="col">數量</th>
-                  <th scope="col">總計</th>
-                  <th scope="col">操作</th>
+                  <th scope="col"><p>商品訊息</p></th>
+                  <th scope="col"><p>狀態</p></th>
+                  <th scope="col"><p>單價</p></th>
+                  <th scope="col"><p>數量</p></th>
+                  <th scope="col"><p>總計</p></th>
+                  <th scope="col"><span>操作</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -209,9 +166,10 @@
                   <td>刪除</td>
                 </tr>
               </tbody>
+
               <tfoot class="table-light">
                 <tr class="shopping-item px-6">
-                  <th scope="row">
+                  <th scope="row" colspan="4">
                     <div class="d-flex text-center align-middle ms-9">
                       <div class="">
                         <input
@@ -222,21 +180,25 @@
                           value=""
                           aria-label="加入購物車"
                         />
+                        <span class="my-7">全選2件</span>
                       </div>
-                      <div class="my-7">全選2件</div>
+                      <!-- <div class="my-7">全選2件</div> -->
                       <!-- <p class="inline-block my-4 ms-6">全選2件</p> -->
                     </div>
                   </th>
                   <!-- <div> -->
-                  <td colspan="5" class="text-end h6">小計</td>
-                  <td class="h5 text-start ps-3">NT$ 1,380</td>
+                  <td colspan="2" class="text-end h6">
+                    <span class="">小計</span>
+                    <span class="h5 text-center ps-3">NT$ 1,380</span>
+                  </td>
+                  <!-- <td class="h5 text-start ps-3">NT$ 1,380</td> -->
                   <!-- </div> -->
                 </tr>
               </tfoot>
             </table>
           </div>
         </div>
-        <!-- 加購商品 -->
+        <!-- 二、加購商品 -->
         <div>
           <div class="mb-12">
             <table class="table table-hover">
