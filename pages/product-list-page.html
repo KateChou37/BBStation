@@ -3,147 +3,2056 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap JS (含 Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="2.css" />
     <title>product-list-page</title>
   </head>
   <body>
-
-    <%- include('./layout/header'); -%> <%- include('./layout/footer'); -%>
-    <section class="banner">
-        <div>
-            <img src="../assets/images/products-Images/product_ad_01.jpg" alt="ad01">
-        </div>
-    </section>
-    <main class="container pt-20 pb-10">
-        <div class="row">
-            <!-- options -->
-            <div class="col-3 pe-14">
-              <div class="filter-option">
-                <div class="d-flex option-title mb-4">
-                  <i class="bi bi-funnel"></i>
-                  <h3 class="h5">篩選條件</h3>
-                </div>
-                <ul class="category-list">
-                  <li><label><input type="checkbox"> 嬰兒服飾</label></li>
-                  <li><label><input type="checkbox"> 男孩服飾</label></li>
-                  <li><label><input type="checkbox"> 女孩服飾</label></li>
-                  <li><label><input type="checkbox"> 玩具</label></li>
-                  <li><label><input type="checkbox"> 育兒書籍</label></li>
-                  <li><label><input type="checkbox"> 哺乳用品</label></li>
-
-                  <li><label><input type="checkbox" id="outdoor-parent"> 外出用品</label></li>
-                  <li>
-                    <ul class="sub-options">
-                      <li><label><input type="checkbox" class="outdoor-child"> 推車</label></li>
-                      <li><label><input type="checkbox" class="outdoor-child"> 揹巾</label></li>
-                      <li><label><input type="checkbox" class="outdoor-child"> 安全座椅</label></li>
-                    </ul>
-                  </li>
-                
-                  <li><label><input type="checkbox"> 媽媽用品</label></li>
-                </ul>
-              </div>
-
-              <div class="filter-option">
-              <div class="d-flex option-title mb-4">
-                <i class="text-primary-300" data-lucide="biceps-flexed"></i>
-                <h3 class="h5">位置（依地區）</h3>
-              </div>   
-              <ul class="category-list">
-                <li><label><input type="checkbox"> 台北</label></li>
-                <li><label><input type="checkbox"> 新北</label></li>
-                <li><label><input type="checkbox"> 桃園</label></li>
-                <li><label><input type="checkbox"> 台中</label></li>
-                <li><label><input type="checkbox"> 高雄</label></li>
-              </ul>
-              </div>
-
-              <div class="price-filter">
-              <div class="d-flex option-title mb-4">
-                <i class="bi bi-coin"></i> 
-                <h3 class="h5">價格範圍</h3>
-              </div>
-              <div>
-                <input type="number" id="min-price" min="0" step="1" placeholder="＄最低價格"><span> - </span>
-                <input type="number" id="max-price" min="0" step="1" placeholder="＄最高價格">
-              </div>
-              </div>
-
-              <div>
-              <button type="button" class="btn clear-btn">清除全部</button>
-              </div>
+    <%- include('./layout/header'); -%>
+    <section class="banner position-relative overflow-hidden">
+      <!-- 桌機版 -->
+      <div
+        id="bannerCarousel"
+        class="carousel slide d-none d-md-block"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <!-- slide 0 -->
+          <div class="carousel-item active">
+            <!-- 背景圖（模糊） -->
+            <img
+              src="../assets/images/products-Images/bg_blur_01.png"
+              class="banner-bg"
+              alt="blur01"
+            />
+            <!-- 前景主要圖片 -->
+            <div class="container banner_product_ad">
+              <img
+                src="../assets/images/products-Images/product_ad_01.jpg"
+                class="ad-img active"
+                alt="ad01"
+              />
             </div>
+          </div>
 
-            <!-- product-list -->
-            <div class="col-9">
-              <div class="row">
-                <div class="col-4 product-card">
-                
-                <a href="product.html" class="product-link">
-                  <div class="product-image-wrapper mb-4">
-                    <img src="/assets/images/products-Images/product08.jpg" alt="多功能寶寶背巾" class="mb-12">
-                    <div class="product-tags">
-                      <span class="tag tag-orange">九成新</span>
-                      <span class="tag tag-blue">寶寶包巾類</span>
-                    </div>
-                  </div>
-                </a>
-                
-                <a href="product.html" class="product-link">
-                  <h3 class="h5 mb-8">多功能寶寶背巾</h3>
-                </a>
-                <p class="text-body-small mb-8">宅配、超商店到店</p>
-                <h3 class="h5 item-price mb-8">NT$ 1,280</h3>
-                <div class="product-actions">
-                  <button class="btn-icon"><i class="bi bi-share"></i> 分享</button>
-                  <button class="btn-icon"><i class="bi bi-chat"></i> 聊聊</button>
-                </div>
-                </div>
-
-                </div>
-
-              </div>
+          <!-- slide 1 -->
+          <div class="carousel-item">
+            <img
+              src="../assets/images/products-Images/bg_blur_02.jpg"
+              class="banner-bg"
+              alt="blur02"
+            />
+            <div class="container banner_product_ad">
+              <img
+                src="../assets/images/products-Images/product_ad_02.jpg"
+                class="ad-img"
+                alt="ad02"
+              />
             </div>
+          </div>
 
+          <!-- slide 2 -->
+          <div class="carousel-item">
+            <img
+              src="../assets/images/products-Images/bg_blur_03.jpg"
+              class="banner-bg"
+              alt="blur03"
+            />
+            <div class="container banner_product_ad">
+              <img
+                src="../assets/images/products-Images/product_ad_03.jpg"
+                class="ad-img"
+                alt="ad03"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- 替換：原本多個 .banner-mobile 區塊，改為下面這個 .banner-scroll -->
+      <div
+        class="banner-scroll d-block d-md-none"
+        role="region"
+        aria-label="mobile-banner"
+      >
+        <div class="banner-item">
+          <img
+            src="../assets/images/products-Images/product_ad_01_mobile.jpg"
+            alt="ad01-mobile"
+          />
+        </div>
+        <div class="banner-item">
+          <img
+            src="../assets/images/products-Images/product_ad_02_mobile.jpg"
+            alt="ad02-mobile"
+          />
+        </div>
+        <div class="banner-item">
+          <img
+            src="../assets/images/products-Images/product_ad_03_mobile.jpg"
+            alt="ad03-mobile"
+          />
+        </div>
+      </div>
 
+      <!-- Indicators 指示器 -->
+      <!-- 自訂 Indicators -->
+      <div class="custom-indicators">
+        <button
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
 
+      <!-- 可選：左右箭頭 -->
+      <button
+        class="carousel-btn button pre d-none d-md-flex align-center justify-center"
+        type="button"
+        data-bs-target="#bannerCarousel"
+        data-bs-slide="prev"
+        aria-label="上一張"
+      >
+        <i class="lucide" data-lucide="chevron-left"></i>
+      </button>
+
+      <button
+        class="carousel-btn button next d-none d-md-flex align-center justify-center"
+        type="button"
+        data-bs-target="#bannerCarousel"
+        data-bs-slide="next"
+        aria-label="下一張"
+      >
+        <i class="lucide" data-lucide="chevron-right"></i>
+      </button>
+    </section>
+
+    <main class="container pt-120 pb-160 py-md-48">
+      <!-- 手機版篩選列 -->
+      <div
+        class="mobile-filter-bar d-flex align-center justify-between d-md-none"
+      >
+        <div class="searching d-flex align-items-center">
+          <div class="search-bar position-relative me-16">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" class="search-input" placeholder="我要找寶物" />
+          </div>
+        </div>
+
+        <!-- 觸發 Offcanvas 的按鈕 -->
+        <button
+          class="btn button filter-btn d-flex align-items-center"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#filterOffcanvas"
+          aria-controls="filterOffcanvas"
+        >
+          <i class="lucide text-primary-300 me-1" data-lucide="settings-2"></i>
+
+          篩選
+        </button>
+      </div>
+
+      <!-- 桌機版選項 -->
+      <div class="row">
+        <!-- options -->
+        <div class="col-3 pe-14 d-none d-md-block">
+          <!-- 篩選條件 -->
+          <div class="filter-options">
+            <div class="d-flex align-center option-title mb-16">
+              <i class="lucide text-primary-300" data-lucide="funnel"></i>
+              <h3 class="h5">篩選條件</h3>
+            </div>
+            <div class="filter-category paragraph-body d-flex">
+              <ul class="category-list">
+                <li>
+                  <label><input type="checkbox" /> 嬰兒服飾</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 男孩服飾</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 女孩服飾</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 玩具</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 育兒書籍</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 哺乳用品</label>
+                </li>
+
+                <li>
+                  <label
+                    ><input type="checkbox" id="outdoor-parent" />
+                    外出用品</label
+                  >
+                </li>
+                <li>
+                  <ul class="sub-options">
+                    <li>
+                      <label
+                        ><input type="checkbox" class="outdoor-child" />
+                        推車</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="outdoor-child" />
+                        揹巾</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="outdoor-child" />
+                        安全座椅</label
+                      >
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <label><input type="checkbox" /> 媽媽用品</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="divider border-gray-400 my-24"></div>
+
+          <!-- 位置（依地區） -->
+          <div class="filter-options">
+            <div class="d-flex align-center option-title mb-16">
+              <i class="lucide text-primary-300" data-lucide="map-pin"></i>
+              <h3 class="h5">位置（依地區）</h3>
+            </div>
+            <div class="filter-category paragraph-body d-flex">
+              <ul class="category-list">
+                <li>
+                  <label><input type="checkbox" /> 台北</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 新北</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 桃園</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 台中</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" /> 高雄</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="divider border-gray-400 my-24"></div>
+
+          <!-- 價格範圍 -->
+          <div class="price-section">
+            <div class="d-flex align-center option-title mb-16">
+              <i
+                class="lucide text-primary-300"
+                data-lucide="circle-dollar-sign"
+              ></i>
+              <h3 class="h5">價格範圍</h3>
+            </div>
+
+            <div class="price-inputs">
+              <div class="price-input-wrapper">
+                <input
+                  type="number"
+                  placeholder="$最低價格"
+                  class="min-price"
+                  class="form-control"
+                />
+              </div>
+              <span class="price-separator">-</span>
+              <div class="price-input-wrapper">
+                <input
+                  type="number"
+                  placeholder="$最高價格"
+                  class="max-price"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="border-bottom border-gray-400 my-24"></div>
+
+          <!-- clear btn -->
+          <button class="button btn-clear">清除全部</button>
+        </div>
+
+        <!-- dropdown 區塊 -->
+        <div class="col-9 col-md-4">
+          <div class="row mb-40">
+            <!-- 空出 4 個欄位（col-4），讓 dropdown 靠右 -->
+            <div class="col-4"></div>
+
+            <!-- dropdown 區塊佔 col-8，靠右 -->
+
+            <!-- <div class="col-8 sort-section mb-40 d-flex"> -->
+            <div class="col-8">
+              <div class="sort-section d-none d-md-flex">
+                <!-- dropdown 1  -->
+                <div class="sort-group">
+                  <label class="sort-label paragraph-body-bold">狀態</label>
+                  <div class="dropdown">
+                    <button
+                      class="dropdown-toggle paragraph-body d-flex align-center justify-between"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <span class="sort-text">不指定</span>
+                      <i data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start active"
+                          href="#"
+                          data-value="default"
+                        >
+                          <i class="check-icon" data-lucide="check"></i>
+                          不指定
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="brandnew"
+                          ><i class="check-icon" data-lucide="check"></i>全新</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="fairly＿new"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >九成新</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="discount"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >七成新以下</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="exchange"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >以物易物</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="donate"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >可捐贈</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- dropdown 2 -->
+                <div class="sort-group">
+                  <label class="sort-label paragraph-body-bold">排序</label>
+                  <div class="dropdown">
+                    <button
+                      class="dropdown-toggle paragraph-body d-flex align-center justify-between"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <span class="sort-text">最新上架</span>
+                      <i data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start active"
+                          href="#"
+                          data-value="default"
+                        >
+                          <i class="check-icon" data-lucide="check"></i
+                          >最新上架</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="price_low_to_high"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >價格由低到高</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item paragraph-body d-flex align-center justify-start"
+                          href="#"
+                          data-value="price_high_to_low"
+                          ><i class="check-icon" data-lucide="check"></i
+                          >價格由高到低</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 商品區塊 -->
+          <div class="row mb-80">
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >九成新</span
+                      >
+                      <!-- 桌機版：藍色標籤在圖片上 (只在 md+ 顯示) -->
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >育兒省力神器</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product08.jpg"
+                      alt="多功能寶寶背巾"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8 mb-md-4">多功能寶寶背巾</h3>
+                    <!-- 手機版：藍色標籤移到 product-info（只在 < md 顯示）並套用白底藍框樣式 -->
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >育兒省力神器</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-md-4"
+                    >
+                      宅配、超商店到店
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 1,280</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >九成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >嬰兒泳衣</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product09.jpg"
+                      alt="嬰兒連身泳衣"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">嬰兒連身泳衣</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >嬰兒泳衣</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      宅配、超商取貨
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 100</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >七成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >居家育兒好物</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product04.jpg"
+                      alt="嬰兒學步車"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">嬰兒學步車</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >居家育兒好物</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      面交
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 500</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >七成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >寶寶必備</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product02.jpg"
+                      alt="嬰兒床+蚊帳組"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">嬰兒床+蚊帳組</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >寶寶必備</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      自取
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 1,800</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >可捐贈</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >嬰兒用品</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product03.jpg"
+                      alt="貝親奶瓶 160ml 2入"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">貝親奶瓶 160ml（2入）</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >嬰兒用品</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      郵寄
+                    </p>
+                    <p class="h5 h6-md item-price">免費</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >八成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >育兒好物</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product05.jpg"
+                      alt="嬰兒床圍（4片組）"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">嬰兒床圍（4片組）</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >育兒好物</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      超商店到店
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 200</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >可捐贈</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >育兒好物</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product06.jpg"
+                      alt="新生兒帽子手套組"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">新生兒帽子手套組</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >育兒好物</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      郵寄
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 1,280</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >全新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >寶寶入門款</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product07.jpg"
+                      alt="寶寶入門款"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">寶寶入門款</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >寶寶入門款</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      自取
+                    </p>
+                    <p class="h5 h6-md item-price">NT$300</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card mb-48">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >可捐贈</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >親子戲水推薦</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product10.jpg"
+                      alt="兒童造型泳圈"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">兒童造型泳圈</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >親子戲水推薦</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      郵寄
+                    </p>
+                    <p class="h5 h6-md item-price">免費</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >七成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >居家育兒好物</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/feedback05.jpg"
+                      alt="高腳餐椅"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">高腳餐椅</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >居家育兒好物</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      面交
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 500</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >九成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >養寶寶必備</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/feedback01.jpg"
+                      alt="嬰兒推車Combi"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">嬰兒推車Combi</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >養寶寶必備</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      面交、自付運費
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 2,500</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-4 col-md-2">
+              <div class="product-card">
+                <button class="favorite-btn button" aria-label="收藏">
+                  <i class="lucide" data-lucide="heart"></i>
+                </button>
+                <a href="product.html">
+                  <div class="product-image mb-16">
+                    <div class="badge paragraph-body-small d-flex">
+                      <span
+                        class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                        >七成新</span
+                      >
+                      <span
+                        class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                        >寶寶必備</span
+                      >
+                    </div>
+                    <img
+                      src="../assets/images/products-Images/product揹巾.png"
+                      alt="BaoBao透氣背巾"
+                      class="mb-16 mb-md-8"
+                    />
+
+                    <div class="product-actions d-flex">
+                      <button class="action-btn button" aria-label="分享">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="send"
+                        ></i>
+                        <span>分享</span>
+                      </button>
+
+                      <button class="action-btn" aria-label="聊聊">
+                        <i
+                          class="lucide text-primary-300"
+                          data-lucide="message-circle-more"
+                        ></i>
+                        <span>聊聊</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <h3 class="h5 item-name mb-8">BaoBao透氣背巾</h3>
+                    <span
+                      class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                      >寶寶必備</span
+                    >
+                    <p
+                      class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                    >
+                      郵寄
+                    </p>
+                    <p class="h5 h6-md item-price">NT$ 500</p>
+                  </div>
+                  <button class="more-btn d-md-none" aria-label="更多">
+                    <i class="lucide" data-lucide="ellipsis"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 分頁按鈕 -->
+
+        <nav class="pagination-wrapper">
+          <ul class="d-flex justify-center align-center">
+            <li>
+              <button
+                class="page-btn button prev d-flex justify-center align-center disabled"
+              >
+                <i data-lucide="chevron-left"></i>
+              </button>
+            </li>
+            <li class="me-12 page-item">
+              <button
+                type="button"
+                class="page-btn button d-flex justify-center align-center active"
+              >
+                1
+              </button>
+            </li>
+            <li class="me-12 page-item">
+              <button
+                type="button"
+                class="page-btn button d-flex justify-center align-center"
+              >
+                2
+              </button>
+            </li>
+
+            <li class="me-12 page-item">
+              <button
+                type="button"
+                class="page-btn button d-flex justify-center align-center"
+              >
+                ...
+              </button>
+            </li>
+            <li class="me-12 page-item">
+              <button
+                type="button"
+                class="page-btn button d-flex justify-center align-center"
+              >
+                6
+              </button>
+            </li>
+            <li>
+              <button
+                class="page-btn button next d-flex justify-center align-center"
+              >
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </main>
+
+    <!-- Offcanvas 篩選面板（右側滑出；header 左側箭頭，可關閉） -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="filterOffcanvas"
+      aria-labelledby="offcanvasFilterLabel"
+    >
+      <div class="offcanvas-header align-center">
+        <button
+          id="filterBackBtn"
+          type="button"
+          class="btn button btn-link p-0 me-2"
+          aria-label="關閉篩選"
+        >
+          <i class="lucide me-8" data-lucide="chevron-left"></i>
+        </button>
+        <h5
+          class="offcanvas-title paragraph-body-md py-md-16"
+          id="offcanvasFilterLabel"
+        >
+          篩選
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <!-- 狀態（checkbox pill） -->
+        <section class="mb-md-16">
+          <div class="section-title d-flex align-center mb-2">
+            <i data-lucide="bookmark" class="me-2 text-primary-400"></i>
+            <h6 class="paragraph-body-small">狀態</h6>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 paragraph-body">
+            <label class="pill">
+              <input type="checkbox" name="status" value="brandnew" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">全新</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="status" value="fairly_new" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">九成新</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="status" value="below_70" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">七成新以下</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="status" value="exchange" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">以物易物</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="status" value="donate" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">可捐贈</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- 排序（radio pill） -->
+        <section class="mb-md-16">
+          <div class="section-title d-flex align-center mb-2">
+            <i data-lucide="sliders" class="me-2 text-primary-400"></i>
+            <h6 class="paragraph-body-small">排序</h6>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <label class="pill pill-radio">
+              <input type="radio" name="sort" value="latest" checked />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">最新上架</span>
+            </label>
+
+            <label class="pill pill-radio">
+              <input type="radio" name="sort" value="price_asc" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">價格由低到高</span>
+            </label>
+
+            <label class="pill pill-radio">
+              <input type="radio" name="sort" value="price_desc" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">價格由高到低</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- 篩選條件（categories） -->
+        <section class="mb-md-16">
+          <div class="section-title d-flex align-center mb-2">
+            <i data-lucide="filter" class="me-2 text-primary-400"></i>
+            <h6 class="paragraph-body-small">篩選條件</h6>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <label class="pill">
+              <input type="checkbox" name="cat" value="baby_clothes" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">嬰兒服飾</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="boy_clothes" checked />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">男孩服飾</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="girl_clothes" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">女孩服飾</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="toys" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">玩具</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="books" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">育兒書籍</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="nursing" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">哺乳用品</span>
+            </label>
+
+            <!-- add more as needed -->
+          </div>
+        </section>
+
+        <!-- 地區 -->
+        <section class="mb-md-16">
+          <div class="section-title d-flex align-center mb-2">
+            <i data-lucide="map-pin" class="me-2 text-primary-400"></i>
+            <h6 class="paragraph-body-small">地區（依位置）</h6>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <label class="pill">
+              <input type="checkbox" name="region" value="taipei" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">台北</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="region" value="newtaipei" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">新北</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="region" value="taoyuan" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">桃園</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="region" value="taichung" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">台中</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="region" value="kaohsiung" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text">高雄</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- 價格範圍 -->
+        <section class="mb-md-16">
+          <div class="section-title d-flex align-center mb-2">
+            <i
+              data-lucide="circle-dollar-sign"
+              class="me-2 text-primary-400"
+            ></i>
+            <h6 class="paragraph-body-small">價格範圍</h6>
+          </div>
+
+          <div class="d-flex gap-2 align-items-center">
+            <input
+              type="number"
+              class="form-control price-input"
+              placeholder="$ 最低價格"
+            />
+            <span>-</span>
+            <input
+              type="number"
+              class="form-control price-input"
+              placeholder="$ 最高價格"
+            />
+          </div>
+        </section>
+      </div>
+
+      <!-- 固定在面板底部的操作按鈕（Reset + Apply） -->
+      <div class="offcanvas-footer d-flex justify-between align-center p-3">
+        <button
+          id="filterResetBtn"
+          type="button"
+          class="btn btn-outline-secondary w-50 me-2"
+        >
+          全部重設
+        </button>
+        <button id="filterApplyBtn" type="button" class="btn btn-primary w-50">
+          篩選
+        </button>
+      </div>
+    </div>
+
+    <section class="recent-viewed">
+      <div class="container pt-120 pb-160">
+        <h2 class="h3 mb-32">您最近看過的商品</h2>
+        <div class="recent-carousel">
+          <button
+            class="carousel-btn button prev d-flex align-center justify-center"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <div class="recent-wrapper">
+            <div class="row recent-item">
+              <div class="col-3 col-md-3">
+                <div class="product-card mb-48">
+                  <button class="favorite-btn button" aria-label="收藏">
+                    <i class="lucide" data-lucide="heart"></i>
+                  </button>
+                  <a href="product.html">
+                    <div class="product-image mb-16">
+                      <div class="badge paragraph-body-small d-flex">
+                        <span
+                          class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                          >七成新</span
+                        >
+                        <span
+                          class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                          >居家育兒好物</span
+                        >
+                      </div>
+                      <img
+                        src="../assets/images/products-Images/product04.jpg"
+                        alt="嬰兒學步車"
+                        class="mb-16 mb-md-8"
+                      />
+
+                      <div class="product-actions d-flex">
+                        <button class="action-btn button" aria-label="分享">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="send"
+                          ></i>
+                          <span>分享</span>
+                        </button>
+
+                        <button class="action-btn" aria-label="聊聊">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="message-circle-more"
+                          ></i>
+                          <span>聊聊</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product-info">
+                      <h3 class="h5 item-name mb-8 h6-md mb-md-4">
+                        嬰兒學步車
+                      </h3>
+                      <span
+                        class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                        >居家育兒好物</span
+                      >
+                      <p
+                        class="shipper paragraph-body-small paragraph-body-xs-md mb-8 mb-md-4"
+                      >
+                        面交
+                      </p>
+                      <p class="h5 h6-md item-price">NT$ 500</p>
+                    </div>
+                    <button class="more-btn d-md-none" aria-label="更多">
+                      <i class="lucide" data-lucide="ellipsis"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-3 col-md-3">
+                <div class="product-card mb-48">
+                  <button class="favorite-btn button" aria-label="收藏">
+                    <i class="lucide" data-lucide="heart"></i>
+                  </button>
+                  <a href="product.html">
+                    <div class="product-image mb-16">
+                      <div class="badge paragraph-body-small d-flex">
+                        <span
+                          class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                          >七成新</span
+                        >
+                        <span
+                          class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                          >寶寶必備</span
+                        >
+                      </div>
+                      <img
+                        src="../assets/images/products-Images/product02.jpg"
+                        alt="嬰兒床+蚊帳組"
+                        class="mb-16 mb-md-8"
+                      />
+
+                      <div class="product-actions d-flex">
+                        <button class="action-btn button" aria-label="分享">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="send"
+                          ></i>
+                          <span>分享</span>
+                        </button>
+
+                        <button class="action-btn" aria-label="聊聊">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="message-circle-more"
+                          ></i>
+                          <span>聊聊</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product-info">
+                      <h3 class="h5 item-name mb-8 h6-md mb-md-4">
+                        嬰兒床+蚊帳組
+                      </h3>
+                      <span
+                        class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                        >寶寶必備</span
+                      >
+                      <p
+                        class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                      >
+                        自取
+                      </p>
+                      <p class="h5 h6-md item-price">NT$ 1,800</p>
+                    </div>
+                    <button class="more-btn d-md-none" aria-label="更多">
+                      <i class="lucide" data-lucide="ellipsis"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-3 col-md-3">
+                <div class="product-card mb-48">
+                  <button class="favorite-btn button" aria-label="收藏">
+                    <i class="lucide" data-lucide="heart"></i>
+                  </button>
+                  <a href="product.html">
+                    <div class="product-image mb-16">
+                      <div class="badge paragraph-body-small d-flex">
+                        <span
+                          class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                          >可捐贈</span
+                        >
+                        <span
+                          class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                          >嬰兒用品</span
+                        >
+                      </div>
+                      <img
+                        src="../assets/images/products-Images/product03.jpg"
+                        alt="貝親奶瓶 160ml 2入"
+                        class="mb-16 mb-md-8"
+                      />
+
+                      <div class="product-actions d-flex">
+                        <button class="action-btn button" aria-label="分享">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="send"
+                          ></i>
+                          <span>分享</span>
+                        </button>
+
+                        <button class="action-btn" aria-label="聊聊">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="message-circle-more"
+                          ></i>
+                          <span>聊聊</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product-info">
+                      <h3 class="h5 item-name mb-8 h6-md mb-md-4">
+                        貝親奶瓶 160ml（2入）
+                      </h3>
+                      <span
+                        class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                        >嬰兒用品</span
+                      >
+                      <p
+                        class="shipper paragraph-body-small paragraph-body-xs-md mb-8"
+                      >
+                        郵寄
+                      </p>
+                      <p class="h5 h6-md item-price">免費</p>
+                    </div>
+                    <button class="more-btn d-md-none" aria-label="更多">
+                      <i class="lucide" data-lucide="ellipsis"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-3 col-md-3">
+                <div class="product-card mb-48">
+                  <button class="favorite-btn button" aria-label="收藏">
+                    <i class="lucide" data-lucide="heart"></i>
+                  </button>
+                  <a href="product.html">
+                    <div class="product-image mb-16">
+                      <div class="badge paragraph-body-small d-flex">
+                        <span
+                          class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                          >八成新</span
+                        >
+                        <span
+                          class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                          >育兒好物</span
+                        >
+                      </div>
+                      <img
+                        src="../assets/images/products-Images/product05.jpg"
+                        alt="嬰兒床圍（4片組）"
+                        class="mb-16 mb-md-8"
+                      />
+
+                      <div class="product-actions d-flex">
+                        <button class="action-btn button" aria-label="分享">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="send"
+                          ></i>
+                          <span>分享</span>
+                        </button>
+
+                        <button class="action-btn" aria-label="聊聊">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="message-circle-more"
+                          ></i>
+                          <span>聊聊</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product-info">
+                      <h3 class="h5 item-name mb-8 h6-md mb-md-4">
+                        嬰兒床圍（4片組）
+                      </h3>
+                      <span
+                        class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                        >育兒好物</span
+                      >
+
+                      <p
+                        class="shipper paragraph-body-small paragraph-body-xs-md mb-8 mb-md-4"
+                      >
+                        超商店到店
+                      </p>
+                      <p class="h5 h6-md item-price">NT$ 200</p>
+                    </div>
+                    <button class="more-btn d-md-none" aria-label="更多">
+                      <i class="lucide" data-lucide="ellipsis"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-3 col-md-3 d-flex">
+                <div class="product-card mb-48">
+                  <button class="favorite-btn button" aria-label="收藏">
+                    <i class="lucide" data-lucide="heart"></i>
+                  </button>
+                  <a href="product.html">
+                    <div class="product-image mb-16">
+                      <div class="badge paragraph-body-small d-flex">
+                        <span
+                          class="badge-pink paragraph-body-small paragraph-body-xs-md"
+                          >七成新</span
+                        >
+                        <span
+                          class="badge-blue paragraph-body-small d-none d-md-inline-block"
+                          >寶寶必備</span
+                        >
+                      </div>
+                      <img
+                        src="../assets/images/products-Images/product揹巾.png"
+                        alt="BaoBao透氣背巾"
+                        class="mb-16 mb-md-8"
+                      />
+
+                      <div class="product-actions d-flex">
+                        <button class="action-btn button" aria-label="分享">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="send"
+                          ></i>
+                          <span>分享</span>
+                        </button>
+
+                        <button class="action-btn" aria-label="聊聊">
+                          <i
+                            class="lucide text-primary-300"
+                            data-lucide="message-circle-more"
+                          ></i>
+                          <span>聊聊</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product-info">
+                      <h3 class="h5 item-name mb-8 h6-md mb-md-4">
+                        BaoBao透氣背巾
+                      </h3>
+                      <span
+                        class="badge-blue badge-blue--mobile paragraph-body-xs-md d-md-none mb-md-4"
+                        >寶寶必備</span
+                      >
+
+                      <p
+                        class="shipper paragraph-body-small paragraph-body-xs-md mb-8 mb-md-4"
+                      >
+                        郵寄
+                      </p>
+                      <p class="h5 h6-md item-price">NT$ 500</p>
+                    </div>
+                    <button class="more-btn d-md-none" aria-label="更多">
+                      <i class="lucide" data-lucide="ellipsis"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-btn button next d-flex align-center justify-center"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <a href="video.html" class="video-float">
+      <img
+        src="/assets/images/products-Images/video-desktop.png"
+        alt="video-name"
+        class="d-none d-md-block"
+      />
+
+      <button
+        class="video-play-btn button d-flex align-center justify-center"
+        aria-label="播放"
+      >
+        <i data-lucide="circle-play pt-83"></i>
+      </button>
+      <div class="video-name">
+        <span class="video-title paragraph-body">影片名稱</span>
+      </div>
+    </a>
+
+    <!-- 新增：mobile action sheet（從下方彈出）- 放在 body 底部，隱藏時 transform: translateY(100%) -->
+    <!-- <div id="mobileActionSheet" class="mobile-action-sheet" aria-hidden="true">
+      <div class="sheet-backdrop"></div>
+      <div class="sheet-panel">
+        <button class="sheet-close" aria-label="關閉">
+          <i data-lucide="x"></i>
+        </button>
+        <ul class="sheet-list">
+          <li><button class="sheet-btn" data-action="share">分享</button></li>
+          <li><button class="sheet-btn" data-action="chat">聊聊</button></li>
+        </ul>
+        <div class="sheet-cancel">
+          <button class="btn btn-light sheet-cancel-btn">取消</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Offcanvas 篩選面板 -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="filterOffcanvas"
+      aria-labelledby="offcanvasFilterLabel"
+    >
+      <div class="offcanvas-header d-flex align-center justify-start">
+        <h5 class="offcanvas-title paragraph-body-md" id="offcanvasFilterLabel">
+          篩選
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <!-- 狀態 -->
+        <section class="mb-3">
+          <i data-lucide="bookmark" class="me-2"></i>
+          <h6 class="fw-bold">狀態</h6>
+          <div class="d-flex flex-wrap gap-2 p">
+            <label><input type="checkbox" class="me-1" /> 全新</label>
+            <label><input type="checkbox" class="me-1" /> 九成新</label>
+            <label><input type="checkbox" class="me-1" /> 七成新以下</label>
+            <label><input type="checkbox" class="me-1" /> 以物易物</label>
+            <label><input type="checkbox" class="me-1" /> 可捐贈</label>
+          </div>
+        </section>
+
+        <!-- 篩選條件 -->
+        <section class="mb-3">
+          <i data-lucide="funnel" class="me-2"></i>
+          <h6 class="fw-bold">篩選條件</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <label><input type="checkbox" class="me-1" /> 嬰兒服飾</label>
+            <label><input type="checkbox" class="me-1" /> 男孩服飾</label>
+            <label><input type="checkbox" class="me-1" /> 女孩服飾</label>
+            <label><input type="checkbox" class="me-1" /> 玩具</label>
+            <label><input type="checkbox" class="me-1" /> 育兒書籍</label>
+            <label><input type="checkbox" class="me-1" /> 哺乳用品</label>
+            <label><input type="checkbox" class="me-1" /> 推車</label>
+            <label><input type="checkbox" class="me-1" /> 揹巾</label>
+            <label><input type="checkbox" class="me-1" /> 安全座椅</label>
+            <label><input type="checkbox" class="me-1" /> 媽媽用品</label>
+          </div>
+        </section>
+
+        <!-- 位置 -->
+        <section class="mb-3">
+          <i data-lucide="map-pin" class="me-2"></i>
+          <h6 class="fw-bold">位置（依地區）</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <label><input type="checkbox" class="me-1" /> 台北</label>
+            <label><input type="checkbox" class="me-1" /> 新北</label>
+            <label><input type="checkbox" class="me-1" /> 桃園</label>
+            <label><input type="checkbox" class="me-1" /> 台中</label>
+            <label><input type="checkbox" class="me-1" /> 高雄</label>
+          </div>
+        </section>
+
+        <!-- 排序 -->
+        <section class="mb-3">
+          <i data-lucide="list-filter" class="me-2"></i>
+          <h6 class="fw-bold">排序</h6>
+          <label
+            ><input type="radio" name="sort" checked class="me-1" />
+            最新上架</label
+          >
+          <label
+            ><input type="radio" name="sort" class="me-1" /> 價格由低到高</label
+          >
+          <label
+            ><input type="radio" name="sort" class="me-1" /> 價格由高到低</label
+          >
+        </section>
+
+        <!-- 價格範圍 -->
+        <section>
+          <i data-lucide="circle-dollar-sign" class="me-2 text-primary"></i>
+          <h6 class="fw-bold">價格範圍</h6>
+          <div class="d-flex align-items-center">
+            <input
+              type="number"
+              class="form-control me-2"
+              placeholder="$最低價格"
+            />
+            <span class="me-2">-</span>
+            <input type="number" class="form-control" placeholder="$最高價格" />
+          </div>
+        </section>
+      </div>
+
+      <div class="offcanvas-footer d-flex justify-content-between p-3">
+        <button class="btn btn-outline-secondary">全部重設</button>
+        <button class="btn btn-primary">套用篩選</button>
+      </div>
+    </div>
+
     <script type="module" src="../main.js"></script>
+
+    <%- include('./layout/footer'); -%>
+
     <script>
-    const parentCheckbox = document.getElementById("outdoor-parent");
-const childCheckboxes = document.querySelectorAll(".outdoor-child");
+      document.addEventListener("DOMContentLoaded", () => {
+        // 初始化 Lucide Icons
+        lucide.createIcons();
 
-// 父層控制子層
-parentCheckbox.addEventListener("change", () => {
-  childCheckboxes.forEach(child => {
-    child.checked = parentCheckbox.checked;
-  });
-  parentCheckbox.indeterminate = false;
-});
+        // Ensure bootstrap JS is available
+        const filterOffcanvasEl = document.getElementById("filterOffcanvas");
+        const filterOffcanvas = filterOffcanvasEl
+          ? bootstrap.Offcanvas.getInstance(filterOffcanvasEl) ||
+            new bootstrap.Offcanvas(filterOffcanvasEl)
+          : null;
 
-// 子層控制父層
-childCheckboxes.forEach(child => {
-  child.addEventListener("change", () => {
-    const total = childCheckboxes.length;
-    const checked = document.querySelectorAll(".outdoor-child:checked").length;
+        // Back arrow inside panel should close the offcanvas
+        const filterBackBtn = document.getElementById("filterBackBtn");
+        if (filterBackBtn && filterOffcanvas) {
+          filterBackBtn.addEventListener("click", () => {
+            filterOffcanvas.hide();
+          });
+        }
 
-    if (checked === 0) {
-      parentCheckbox.checked = false;
-      parentCheckbox.indeterminate = false;
-    } else if (checked === total) {
-      parentCheckbox.checked = true;
-      parentCheckbox.indeterminate = false;
-    } else {
-      parentCheckbox.checked = false;
-      parentCheckbox.indeterminate = true; // 顯示橫線
-    }
-  });
-});
+        // Reset button inside panel - clear inputs within the offcanvas
+        const resetBtn = document.getElementById("filterResetBtn");
+        if (resetBtn && filterOffcanvasEl) {
+          resetBtn.addEventListener("click", () => {
+            filterOffcanvasEl.querySelectorAll("input").forEach((input) => {
+              if (input.type === "checkbox" || input.type === "radio")
+                input.checked = false;
+              else input.value = "";
+            });
+            // re-render icons if any changed visually
+            lucide.createIcons();
+          });
+        }
 
-</script>
+        // Apply button - collect values (example) and close panel
+        const applyBtn = document.getElementById("filterApplyBtn");
+        if (applyBtn && filterOffcanvasEl) {
+          applyBtn.addEventListener("click", () => {
+            const form = filterOffcanvasEl; // simple scope
+            const data = {
+              status: Array.from(
+                form.querySelectorAll('input[name="status"]:checked')
+              ).map((i) => i.value),
+              sort:
+                (form.querySelector('input[name="sort"]:checked') || {})
+                  .value || null,
+              categories: Array.from(
+                form.querySelectorAll('input[name="cat"]:checked')
+              ).map((i) => i.value),
+              regions: Array.from(
+                form.querySelectorAll('input[name="region"]:checked')
+              ).map((i) => i.value),
+              priceMin: (form.querySelector(".price-input") || {}).value || "",
+              priceMax:
+                (form.querySelectorAll(".price-input")[1] || {}).value || "",
+            };
+            // TODO: 把 data 傳給搜尋 / API 或用在 client-side filter
+            console.log("Filter apply:", data);
+
+            // close panel
+            if (filterOffcanvas) filterOffcanvas.hide();
+          });
+        }
+
+        // Style interaction for pills: mark parent label when inside input is checked (support dynamic state)
+        document.querySelectorAll(".pill input").forEach((input) => {
+          const label = input.closest("label.pill");
+          function sync() {
+            if (input.checked) label.classList.add("is-checked");
+            else label.classList.remove("is-checked");
+          }
+          // init
+          sync();
+          input.addEventListener("change", sync);
+        });
+
+        // Banner indicators (desktop carousel) - keep previous logic but safe
+        const carousel = document.getElementById("bannerCarousel");
+        const indicators = document.querySelectorAll(
+          ".custom-indicators button"
+        );
+        if (carousel && indicators.length > 0) {
+          carousel.addEventListener("slide.bs.carousel", (event) => {
+            indicators.forEach((el) => el.classList.remove("active"));
+            if (indicators[event.to])
+              indicators[event.to].classList.add("active");
+          });
+
+          indicators.forEach((el, index) => {
+            el.addEventListener("click", () => {
+              const bsCarousel =
+                bootstrap.Carousel.getInstance(carousel) ||
+                new bootstrap.Carousel(carousel);
+              bsCarousel.to(index);
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>

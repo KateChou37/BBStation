@@ -1,24 +1,148 @@
 /* page 頁面的樣式設定 */
-.header {
-    background-image: url(../assets/images/products-Images/product_ad_01.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 0;
+
+.filter-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.py-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pe-8 {
+  padding-right: 8px;
+}
+.pe-12 {
+  padding-right: 12px;
+}
+
+.lucide {
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.banner {
+  position: relative;
+  height: 808px;
+  overflow: hidden;
+}
+
+.banner-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(10px);
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+
+.banner_product_ad {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1296px;
+  height: 648px;
+  z-index: 2;
+}
+.banner_product_ad img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持比例 */
+  border-radius: 40px; /* 你設計稿的圓角 */
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+/*
+.banner_product_ad img.active {
+  display: block;
+}*/
+.border-bottom {
+  border-bottom: 1px solid var(--gray-400);
+}
+.category-list li {
+  padding-left: 36px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+}
+
+/* Lucide 箭頭自訂 */
+.carousel-control-prev,
+.carousel-control-next {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* 點擊範圍 */
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95); /* 白色半透明背景 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25); /* Figma 陰影設定 */
+  transition: all 0.3s ease;
+  padding: 0;
+}
+/* Hover 狀態 - 透明灰色圓形 */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(108, 117, 125, 0.3); /* 透明灰色 */
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  /* background: rgba(252, 250, 250, 0.5);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3); */
+}
+
+/* 箭頭位置在主要圖左右外框 */
+.carousel-control-prev {
+  left: calc((100% - 1296px) / 2 + 24px); /* 容器左邊緣 + 24px 間距 */
+}
+.carousel-control-next {
+  right: calc((100% - 1296px) / 2 + 24px); /* 容器右邊緣 + 24px 間距 */
+}
+
+/* 預設箭頭 - 灰色 */
+.carousel-control-prev svg,
+.carousel-control-next svg {
+  color: var(--gray-600); /* 箭頭顏色 */
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+  transition: stroke 0.3s ease;
+  display: block;
+}
+/* Hover 箭頭 - 黑色 */
+.carousel-control-prev:hover svg,
+.carousel-control-next:hover isvg {
+  stroke: var(--black); /* 黑色 */
+  stroke-width: 2.5;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .filter-option {
-    display: flex;
-    align-items: center;    
-}
-.bi {
-    font-size: 20px;
-    margin-right: 12px;
-
+  display: flex;
+  align-items: center;
 }
 
 .filter {
   padding: 16px;
-  background: var(--gray-50);
+  background: $gray-50; /*var(--gray-50)*/
   border: 1px solid var(--gray-800);
   border-radius: 8px;
 }
@@ -36,8 +160,8 @@
 }
 
 .category-list {
-  list-style: none;   /* 移除圓點 */
-  padding-left: 0;    /* 移除左邊縮排 */
+  list-style: none; /* 移除圓點 */
+  padding-left: 0; /* 移除左邊縮排 */
 }
 
 .category-list li {
@@ -45,9 +169,8 @@
 }
 
 .category-list input[type="checkbox"] {
-  margin-right: 6px;  /* 控制文字和方框的距離 */
+  margin-right: 6px; /* 控制文字和方框的距離 */
 }
-
 
 .filter-option {
   display: flex;
@@ -60,7 +183,6 @@
   align-items: center;
   margin-bottom: 8px;
   cursor: pointer;
-  
 }
 
 .filter-group {
@@ -98,88 +220,86 @@
   color: var(--white);
 }
 .item-price {
-    color: var(--primary-500);
+  color: var(--primary-500);
 }
 
 /* 產品卡片樣式 */
 .product-link {
-    text-decoration: none;  /* 移除底線 */
-    color: inherit;  /* 繼承父層顏色，不顯示藍色 */
-    display: block;  /* 讓整個區塊可以點擊 */
+  text-decoration: none; /* 移除底線 */
+  color: inherit; /* 繼承父層顏色，不顯示藍色 */
+  display: block; /* 讓整個區塊可以點擊 */
 }
 
 .product-link:hover h3 {
-    color: var(--primary-500);  /* 滑鼠移上去，標題變藍色 */
+  color: var(--primary-500); /* 滑鼠移上去，標題變藍色 */
 }
 .product-card {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
-
 .product-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .product-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-
 .product-tags {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    display: flex;
-    gap: 8px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
 }
 
 .tag {
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
 }
 
 .tag-pink {
-    background-color: var(--highlight-300);
+  background-color: var(--highlight-300);
 }
 
 .tag-blue {
-    background-color: var(--primary-400);
+  background-color: var(--primary-400);
 }
 
 .product-actions {
-    display: flex;
-    gap: 12px;
-    margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .btn-icon {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: transparent;
-    border: 1px solid var(--gray-400);
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    color: var(--gray-700);
-    transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--gray-400);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--gray-700);
+  transition: all 0.3s;
 }
 
 .btn-icon:hover {
-    background-color: var(--gray-100);
-    border-color: var(--primary-400);
-    color: var(--primary-400);
+  background-color: var(--gray-100);
+  border-color: var(--primary-400);
+  color: var(--primary-400);
 }
 
 .btn-icon i {
-    font-size: 16px;
+  font-size: 16px;
 }
