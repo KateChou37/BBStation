@@ -275,66 +275,34 @@ td {
     z-index: 10;
   }
 }
-//共用按鈕
-.card-body .btn {
-  color: white;
-  width: 129px;
-  height: 48px;
-  font-size: 16px;
-}
-//已加購
-// .card-body.active .btn {
-//   border-color: #adb5bd;
-//   background-color: #adb5bd;
-//   color: #eceef0;
-// }
-// .card-body.completed .btn {
-//   border-color: #adb5bd;
-//   background-color: #adb5bd;
-//   color: #eceef0;
-// }
 
-//結帳金額
-.total-amount {
-  p {
-    font-size: 16px;
-  }
-  button {
-    font-size: 16px;
-  }
-}
-
-//試試-加購按鈕
+//加購按鈕
 .cart-button-wrapper {
   display: inline-block;
 }
-
 .cart-checkbox {
   display: none;
 }
-
 .btn-cart-label {
   width: 129px;
   height: 48px;
   padding: 12px auto;
-  font-size: 16px; //
+  font-size: 16px;
   border: none;
-  border-radius: 24px; //
+  border-radius: 24px;
   display: inline-flex;
   align-items: center;
-  gap: 8px; //
+  gap: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 100px;
   justify-content: center;
   background-color: #3faad5;
-  color: white; //
-
+  color: white;
   i {
     width: 24px;
     height: 24px;
   }
-
   // 預設：顯示「加購」
   .icon-added,
   .text-added {
@@ -346,7 +314,6 @@ td {
     transform: scale(1.05);
   }
 }
-
 // 勾選後：顯示「已加購」
 .cart-checkbox:checked + .btn-cart-label {
   background-color: #adb5bd;
@@ -367,5 +334,23 @@ td {
     background-color: #f2f2f4;
     border: 2px solid #adb5bd;
     transform: none;
+  }
+}
+
+//共用按鈕
+.card-body .btn {
+  color: white;
+  width: 129px;
+  height: 48px;
+  font-size: 16px;
+}
+
+//結帳金額
+.total-amount {
+  p {
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
   }
 }
