@@ -1,7 +1,12 @@
 body {
   background-color: var(--bs-gray-50);
 }
-
+h3 {
+  font-size: 28px;
+}
+h5 {
+  font-size: 20px;
+}
 //購物流程步驟-試用
 .checkout-steps {
   display: flex;
@@ -162,6 +167,7 @@ body {
 }
 .shopping-item {
   border-bottom: 1px solid #dee2e6;
+  padding: 0 24px;
 }
 // 表格圓角
 .table thead th:first-child {
@@ -172,11 +178,11 @@ body {
 }
 .table tfoot tr:last-child th:first-child {
   border-bottom-left-radius: 40px; /* 左下角 */
-  border-bottom: none;
+  border-bottom: 1px solid transparent;
 }
 .table tfoot tr:last-child td:last-child {
   border-bottom-right-radius: 40px; /* 右下角 */
-  border-bottom: none;
+  border-bottom: 1px solid transparent;
 }
 
 .shopping-item th,
@@ -188,6 +194,17 @@ td {
 }
 .shopping-item p {
   font-weight: 700;
+}
+.shopping-item .total-price {
+  font-size: 20px;
+  text-align: center;
+}
+.shopping-item .form-check-input-lg {
+  width: 20px;
+  height: 20px;
+  margin-left: 12px;
+  border: 1px solid #189ec7;
+  border-radius: 6px;
 }
 .item-status {
   padding: 4px 12px;
@@ -208,4 +225,147 @@ td {
 .qty-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+// 加購卡片
+.bg-color {
+  background-color: #f2f2f4;
+}
+.more-product {
+  ul {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  li {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+.more-product-card {
+  position: relative;
+
+  img {
+    border-radius: 40px;
+    width: 100%;
+    height: auto;
+  }
+  // 標籤容器
+  .item-status-wrapper {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    z-index: 10;
+  }
+  .chevron-left {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 120px;
+    left: -20px;
+    z-index: 10;
+  }
+  .chevron-right {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 120px;
+    right: -20px;
+    z-index: 10;
+  }
+}
+//共用按鈕
+.card-body .btn {
+  color: white;
+  width: 129px;
+  height: 48px;
+  font-size: 16px;
+}
+//已加購
+// .card-body.active .btn {
+//   border-color: #adb5bd;
+//   background-color: #adb5bd;
+//   color: #eceef0;
+// }
+// .card-body.completed .btn {
+//   border-color: #adb5bd;
+//   background-color: #adb5bd;
+//   color: #eceef0;
+// }
+
+//結帳金額
+.total-amount {
+  p {
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
+  }
+}
+
+//試試-加購按鈕
+.cart-button-wrapper {
+  display: inline-block;
+}
+
+.cart-checkbox {
+  display: none;
+}
+
+.btn-cart-label {
+  width: 129px;
+  height: 48px;
+  padding: 12px auto;
+  font-size: 16px; //
+  border: none;
+  border-radius: 24px; //
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; //
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  justify-content: center;
+  background-color: #3faad5;
+  color: white; //
+
+  i {
+    width: 24px;
+    height: 24px;
+  }
+
+  // 預設：顯示「加購」
+  .icon-added,
+  .text-added {
+    display: none;
+  }
+
+  &:hover {
+    background-color: darken(#258fc1, 10%);
+    transform: scale(1.05);
+  }
+}
+
+// 勾選後：顯示「已加購」
+.cart-checkbox:checked + .btn-cart-label {
+  background-color: #adb5bd;
+  color: #eceef0;
+
+  .icon-add,
+  .text-add {
+    display: none;
+  }
+
+  .icon-added,
+  .text-added {
+    display: inline-block;
+  }
+
+  &:hover {
+    color: #adb5bd;
+    background-color: #f2f2f4;
+    border: 2px solid #adb5bd;
+    transform: none;
+  }
 }
