@@ -21,45 +21,41 @@
   --bs-btn-disabled-bg: #adb5bd; // disabled 背景色 
 }
 
-.button-small-default-text{
-    padding: 8px 12px;
+.button-small-default-text{  
   --bs-btn-color: #fff; // 預設字色
   --bs-btn-hover-color: #fff; // hover 字色
   --bs-btn-active-color: #fff; // active 字色
   --bs-btn-disabled-color: #fff; // disabled 字色
 
-  --bs-btn-bg: $primary-400; // 預設背景色 
-  --bs-btn-hover-bg: $primary-600; // hover 背景色 
-  --bs-btn-active-bg: $primary-600; // active 背景色 
-  --bs-btn-disabled-bg: $gray-500; // disabled 背景色 
+  --bs-btn-bg: #3faad5; // 預設背景色 
+  --bs-btn-hover-bg: #258fc1; // hover 背景色 
+  --bs-btn-active-bg: #258fc1; // active 背景色 
+  --bs-btn-disabled-bg: #adb5bd; // disabled 背景色 
 }
 
-.button-Ghost-default-text{
-     padding: 12px 16px;
-  --bs-btn-color: $gray-700; // 預設字色
-  --bs-btn-hover-color: $primary-600; // hover 字色
-  --bs-btn-active-color: $primary-600; // active 字色
-  --bs-btn-disabled-color: $gray-500; // disabled 字色
-
-  --bs-btn-bg: none; // 預設背景色 
-  --bs-btn-hover-bg: $primary-50; // hover 背景色 
-  --bs-btn-active-bg: $primary-50; // active 背景色 
-  --bs-btn-disabled-bg: $gray-100; // disabled 背景色 
-}
-.button-Ghost-default-icon{
-     padding: 12px;
-  --bs-btn-color: $gray-700; // 預設字色
-  --bs-btn-hover-color: $primary-600; // hover 字色
-  --bs-btn-active-color: $primary-600; // active 字色
-  --bs-btn-disabled-color: $gray-500; // disabled 字色
+.button-ghost-default-text{   
+  --bs-btn-color: #646a71; // 預設字色
+  --bs-btn-hover-color: #258fc1; // hover 字色
+  --bs-btn-active-color: #258fc1; // active 字色
+  --bs-btn-disabled-color: #adb5bd; // disabled 字色
 
   --bs-btn-bg: none; // 預設背景色 
-  --bs-btn-hover-bg: $primary-50; // hover 背景色 
-  --bs-btn-active-bg: $primary-50; // active 背景色 
+  --bs-btn-hover-bg: #e3f4f8; // hover 背景色 
+  --bs-btn-active-bg: #e3f4f8; // active 背景色 
   --bs-btn-disabled-bg: $gray-100; // disabled 背景色 
 }
-.button-Ghost-default-badge{
-     padding: 12px;
+.button-Ghost-default-icon{     
+  --bs-btn-color: #646a71; // 預設字色
+  --bs-btn-hover-color: #258fc1; // hover 字色
+  --bs-btn-active-color: #258fc1; // active 字色
+  --bs-btn-disabled-color: #adb5bd; // disabled 字色
+
+  --bs-btn-bg: none; // 預設背景色 
+  --bs-btn-hover-bg: #e3f4f8; // hover 背景色 
+  --bs-btn-active-bg: #e3f4f8; // active 背景色 
+  --bs-btn-disabled-bg: $gray-100; // disabled 背景色 
+}
+.button-Ghost-default-badge{    
   --bs-btn-color: #6ABFDD; // 預設字色
   --bs-btn-hover-color: #258FC1; // hover 字色
   --bs-btn-active-color: #258FC1; // active 字色
@@ -69,11 +65,10 @@
 }
 
 .button-Ghost-default-text-action{
-     padding: 12px;
-  --bs-btn-color: $primary-500; // 預設字色
-  --bs-btn-hover-color: $primary-600; // hover 字色
-  --bs-btn-active-color: $primary-600; // active 字色
-  --bs-btn-disabled-color: $gray-500; // disabled 字色
+  --bs-btn-color: #189ec7; // 預設字色
+  --bs-btn-hover-color: #258fc1; // hover 字色
+  --bs-btn-active-color: #258fc1; // active 字色
+  --bs-btn-disabled-color: #adb5bd; // disabled 字色
 
   --bs-btn-bg: transparent; // 預設背景色 
   --bs-btn-hover-bg: transparent; // hover 背景色 

@@ -1,6 +1,156 @@
-.rounded-circle {
+body {
+  background-color: var(--bs-gray-50);
+}
+h3 {
+  font-size: 28px;
+}
+h5 {
+  font-size: 20px;
+}
+//購物流程步驟-試用
+.checkout-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 2.5rem 0;
+
+  // border-bottom: 1px solid #dee2e6;
+}
+
+.step-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.step-content {
+  text-align: center;
+  min-width: 100px;
+}
+
+.step-number {
   width: 32px;
   height: 32px;
+  border: 2px solid #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #787f85;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.step-item.active .step-number {
+  border-color: #189ec7;
+  background-color: #fafafa;
+  color: #189ec7;
+}
+
+.step-item.completed .step-number {
+  border-color: #189ec7;
+  background-color: #fafafa;
+  color: #189ec7;
+}
+
+.step-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #465668;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.step-item.active .step-label {
+  color: #189ec7;
+}
+
+.step-item.completed .step-label {
+  color: #189ec7;
+}
+
+/* 連接線 */
+.step-line {
+  width: 80px;
+  height: 2px;
+  background-color: #dee2e6;
+  margin: 0 8px;
+  position: relative;
+  top: -15px;
+}
+
+.step-item.completed ~ .step-item .step-line {
+  background-color: #189ec7;
+}
+
+.step-item.active .step-line {
+  background: linear-gradient(to right, #189ec7 50%, #dee2e6 50%);
+}
+
+/* RWD 響應式設計 */
+@media (max-width: 768px) {
+  .step-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: row;
+    margin: 0 auto;
+    // gap: 1.5rem;
+  }
+
+  .step-line {
+    width: 24px;
+    height: 2px;
+    margin: 0;
+    top: 0;
+  }
+
+  .step-content {
+    min-width: auto;
+  }
+
+  .step-label {
+    white-space: normal;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
+
+  .step-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* 完成圖示 */
+.step-item.completed .step-number::after {
+  content: "✓";
+  position: absolute;
+}
+
+// 購物正式
+//頭像
+.rounded-circle {
+  width: 48px;
+  height: 48px;
   color: $primary-500;
   border-color: $primary-500;
   font-weight: 400;
@@ -10,25 +160,51 @@
 .car-step {
   font-size: 14px;
 }
-table {
-  //   border-radius: 40px;
-  border-top-left-radius: 12px;
-  border-radius: 0 40px 40px 0;
-}
-.form-headfoot {
-  // border-top-left-radius: 40px;
-  border-radius: 40px 0 0 8px;
+.hyphen {
+  width: 80px;
+  height: 2px;
+  color: #dee2e6;
 }
 .shopping-item {
   border-bottom: 1px solid #dee2e6;
+  padding: 0 24px;
 }
+// 表格圓角
+.table thead th:first-child {
+  border-top-left-radius: 40px; /* 左上角 */
+}
+.table thead th:last-child {
+  border-top-right-radius: 40px; /* 右上角 */
+}
+.table tfoot tr:last-child th:first-child {
+  border-bottom-left-radius: 40px; /* 左下角 */
+  border-bottom: 1px solid transparent;
+}
+.table tfoot tr:last-child td:last-child {
+  border-bottom-right-radius: 40px; /* 右下角 */
+  border-bottom: 1px solid transparent;
+}
+
 .shopping-item th,
 td {
   width: 198px;
   text-align: center;
   vertical-align: middle;
+  font-size: 16px;
+}
+.shopping-item p {
+  font-weight: 700;
+}
+.shopping-item .total-price {
+  font-size: 20px;
   text-align: center;
-  vertical-align: middle;
+}
+.shopping-item .form-check-input-lg {
+  width: 20px;
+  height: 20px;
+  margin-left: 12px;
+  border: 1px solid #189ec7;
+  border-radius: 6px;
 }
 .item-status {
   padding: 4px 12px;
@@ -51,3 +227,130 @@ td {
   margin: 0;
 }
 
+// 加購卡片
+.bg-color {
+  background-color: #f2f2f4;
+}
+.more-product {
+  ul {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  li {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+.more-product-card {
+  position: relative;
+
+  img {
+    border-radius: 40px;
+    width: 100%;
+    height: auto;
+  }
+  // 標籤容器
+  .item-status-wrapper {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    z-index: 10;
+  }
+  .chevron-left {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 120px;
+    left: -20px;
+    z-index: 10;
+  }
+  .chevron-right {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 120px;
+    right: -20px;
+    z-index: 10;
+  }
+}
+
+//加購按鈕
+.cart-button-wrapper {
+  display: inline-block;
+}
+.cart-checkbox {
+  display: none;
+}
+.btn-cart-label {
+  width: 129px;
+  height: 48px;
+  padding: 12px auto;
+  font-size: 16px;
+  border: none;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  justify-content: center;
+  background-color: #3faad5;
+  color: white;
+  i {
+    width: 24px;
+    height: 24px;
+  }
+  // 預設：顯示「加購」
+  .icon-added,
+  .text-added {
+    display: none;
+  }
+
+  &:hover {
+    background-color: darken(#258fc1, 10%);
+    transform: scale(1.05);
+  }
+}
+// 勾選後：顯示「已加購」
+.cart-checkbox:checked + .btn-cart-label {
+  background-color: #adb5bd;
+  color: #eceef0;
+
+  .icon-add,
+  .text-add {
+    display: none;
+  }
+
+  .icon-added,
+  .text-added {
+    display: inline-block;
+  }
+
+  &:hover {
+    color: #adb5bd;
+    background-color: #f2f2f4;
+    border: 2px solid #adb5bd;
+    transform: none;
+  }
+}
+
+//共用按鈕
+.card-body .btn {
+  color: white;
+  width: 129px;
+  height: 48px;
+  font-size: 16px;
+}
+
+//結帳金額
+.total-amount {
+  p {
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
+  }
+}
