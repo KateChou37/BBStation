@@ -445,13 +445,13 @@ body {
 }
 
 .me-8 {
-  margin-left: 8px;
+  margin-right: 8px;
 }
 .me-12 {
-  margin-left: 12px;
-}
-.mr-12 {
   margin-right: 12px;
+}
+.me-100 {
+  margin-right: 100px;
 }
 
 .py-8 {
@@ -488,7 +488,6 @@ body {
 .lucide {
   font-size: 24px;
   vertical-align: middle;
-  margin-right: 12px;
 }
 
 .banner {
@@ -765,7 +764,7 @@ input[type="checkbox"]:indeterminate::after {
   height: 48px;
   padding: 10px;
   background: var(--primary-400);
-  border: 1px solid var(--gray-400);
+  border: none;
   border-radius: 24px;
   color: var(--white);
   cursor: pointer;
@@ -774,7 +773,7 @@ input[type="checkbox"]:indeterminate::after {
 
 .btn-clear:hover {
   background: var(--primary-600);
-  border-color: var(--gray-600);
+  border-color: var(--white);
 }
 
 /* drop down */
@@ -1132,12 +1131,12 @@ dropdown-item:focus {
   right: 0px;
   width: 360px;
   height: 203px;
-  z-index: 99;
+  z-index: 999;
   cursor: pointer;
   border-radius: 24px;
   overflow: hidden;
   /* background: rgba(0, 0, 0, 0.5); */
-  display: block;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1164,11 +1163,37 @@ dropdown-item:focus {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  /* background: rgba(255, 255, 255, 0.8); */
+  background: rgba(255, 255, 255, 0.9);
   border: none;
+
   transition: background 0.3s ease;
   opacity: 0;
-  z-index: 5;
+  z-index: 999;
+}
+
+/* ensure lucide icon inside is visible */
+.video-float .video-play-btn .icon-play,
+.video-float .video-play-btn svg {
+  width: 36px;
+  height: 36px;
+  color: var(--primary-400);
+  stroke: currentColor;
+  fill: currentColor;
+  display: block;
+}
+
+/* when hovered, subtle change */
+.video-float .video-play-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+/* keep video-img visible */
+.video-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .video-float:hover .video-play-btn {
@@ -1176,13 +1201,13 @@ dropdown-item:focus {
   color: var(--white);
 }
 
-.video-float .video-play-btn svg {
+/* .video-float .video-play-btn svg {
   display: none;
   width: 36px;
   height: 36px;
   color: var(--white);
   z-index: 5;
-}
+} */
 
 .video-title {
   position: absolute;
@@ -1277,7 +1302,7 @@ dropdown-item:focus {
     letter-spacing: 0.5px;
   }
   .paragraph-body-small-md {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0px;
@@ -1340,6 +1365,10 @@ dropdown-item:focus {
   }
   .me-md-12 {
     margin-right: 12px;
+  }
+
+  .me-md-8 {
+    margin-right: 8px;
   }
 
   .row {
@@ -1419,17 +1448,18 @@ dropdown-item:focus {
   }
 
   .filter-btn {
-    background: var(--white);
+    background: var(--gray-50);
     border: none;
     border-radius: 24px;
     padding: 8px 16px;
-    color: var(--gray-800);
+    color: var(--gray-700);
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
   .filter-btn:hover {
-    background: var(--gray-50);
+    background: var(--primary-50);
+    color: var(--primary-600);
   }
 
   /* ====== 手機 banner: scroll-snap ====== */
@@ -1471,19 +1501,64 @@ dropdown-item:focus {
     flex-direction: column;
   }
 
-  .filter-panel.active {
+  /* .filter-panel.active {
     right: 0;
+  } */
+  .close-btn .lucide {
+    color: var(--gray-600);
   }
 
-  .filter-header {
+  .filter-btn {
+    background: var(--gray-50);
+    border: none;
+    border-radius: 24px;
+    padding: 8px 16px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: var(--primary-50);
+    color: var(--primary-600);
+  }
+
+  .close-btn {
+    background: var(--white);
+    border: none;
+    color: var(--gray-700);
+    border-radius: 24px;
+    padding: 16px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .close-btn:hover {
+    background: var(--primary-50);
+    color: var(--primary-600);
+  }
+
+  .offcanvas-header {
     padding: 16px;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-300);
   }
 
-  .filter-body {
+  .offcanvas-body .lucide {
+    width: 16px;
+    height: 16px;
+  }
+  .text-gray-md-800 {
+    color: var(--gray-800);
+  }
+
+  .offcanvas-body {
     flex: 1;
     overflow-y: auto;
     padding: 16px;
+  }
+
+  .filter-group input[type="checkbox"] {
+    margin: 0;
   }
 
   .filter-group {
@@ -1496,10 +1571,21 @@ dropdown-item:focus {
     color: var(--gray-800);
   }
 
-  .options label {
+  /* .options label  */
+  .pill {
     display: block;
     margin-bottom: 8px;
     color: var(--gray-700);
+    background: var(--highlight-300);
+    border: none;
+    border-radius: 24px;
+    /* padding: 12px; */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 44px;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content: flex-start;
   }
 
   .price-range input {
@@ -1511,24 +1597,56 @@ dropdown-item:focus {
   }
 
   /* footer buttons */
-  .filter-footer {
+  /* .filter-footer { */
+
+  .offcanvas-footer {
     padding: 16px;
-    border-top: 1px solid var(--gray-200);
+    border-top: 1px solid var(--gray-300);
   }
 
   .reset-btn {
-    background: var(--gray-100);
-    color: var(--gray-600);
+    background: var(--white);
+    border: none;
+    color: var(--gray-700);
     border-radius: 24px;
-    padding: 8px 24px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .reset-btn:hover {
+    background: var(--primary-600);
+    color: var(--white);
   }
 
   .apply-btn {
-    background: var(--primary-500);
-    color: var(--white);
+    background: var(--white);
+    border: none;
+    color: var(--gray-700);
     border-radius: 24px;
-    padding: 8px 24px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s;
   }
+
+  .apply-btn:hover {
+    background: var(--primary-600);
+    color: var(--white);
+  }
+
+  /* 
+background: var(--primary-400);
+  border: none;
+  border-radius: 24px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-clear:hover {
+  background: var(--primary-600);
+  border-color: var(--white);
+} */
 
   .mobile-filter-bar,
   #filterPanel {

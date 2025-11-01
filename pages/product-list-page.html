@@ -158,20 +158,20 @@
       >
         <div class="searching d-flex align-items-center">
           <div class="search-bar position-relative me-16">
-            <i data-lucide="search" class="search-icon"></i>
+            <i class="lucide search-icon me-12" data-lucide="search"></i>
             <input type="text" class="search-input" placeholder="我要找寶物" />
           </div>
         </div>
 
         <!-- 觸發 Offcanvas 的按鈕 -->
         <button
-          class="btn button filter-btn d-flex align-items-center"
+          class="filter-btn button d-flex align-items-center"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#filterOffcanvas"
           aria-controls="filterOffcanvas"
         >
-          <i class="lucide text-primary-300 me-1" data-lucide="settings-2"></i>
+          <i class="lucide text-primary-300 me-8" data-lucide="settings-2"></i>
 
           篩選
         </button>
@@ -184,8 +184,8 @@
           <!-- 篩選條件 -->
           <div class="filter-options">
             <div class="d-flex align-center option-title mb-16">
-              <i class="lucide text-primary-300" data-lucide="funnel"></i>
-              <h3 class="h5">篩選條件</h3>
+              <i class="lucide text-primary-300 me-12" data-lucide="funnel"></i>
+              <h3 class="h5 me-12">篩選條件</h3>
             </div>
             <div class="filter-category paragraph-body d-flex">
               <ul class="category-list">
@@ -248,7 +248,10 @@
           <!-- 位置（依地區） -->
           <div class="filter-options">
             <div class="d-flex align-center option-title mb-16">
-              <i class="lucide text-primary-300" data-lucide="map-pin"></i>
+              <i
+                class="lucide text-primary-300 me-12"
+                data-lucide="map-pin"
+              ></i>
               <h3 class="h5">位置（依地區）</h3>
             </div>
             <div class="filter-category paragraph-body d-flex">
@@ -277,7 +280,7 @@
           <div class="price-section">
             <div class="d-flex align-center option-title mb-16">
               <i
-                class="lucide text-primary-300"
+                class="lucide text-primary-300 me-12"
                 data-lucide="circle-dollar-sign"
               ></i>
               <h3 class="h5">價格範圍</h3>
@@ -1245,16 +1248,16 @@
 
     <!-- Offcanvas 篩選面板（右側滑出；header 左側箭頭，可關閉） -->
     <div
-      class="offcanvas offcanvas-end"
+      class="offcanvas offcanvas-end py-md-16"
       tabindex="-1"
       id="filterOffcanvas"
       aria-labelledby="offcanvasFilterLabel"
     >
-      <div class="offcanvas-header align-center">
+      <div class="offcanvas-header d-md-flex align-center justify-start">
         <button
           id="filterBackBtn"
           type="button"
-          class="btn button btn-link p-0 me-2"
+          class="close-btn button btn-link d-flex align-center py-md-16 me-2"
           aria-label="關閉篩選"
         >
           <i class="lucide me-8" data-lucide="chevron-left"></i>
@@ -1265,51 +1268,51 @@
         >
           篩選
         </h5>
-        <button
+        <!-- <button
           type="button"
           class="btn-close"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
-        ></button>
+        ></button> -->
       </div>
 
-      <div class="offcanvas-body">
+      <div class="offcanvas-body py-md-12">
         <!-- 狀態（checkbox pill） -->
         <section class="mb-md-16">
           <div class="section-title d-flex align-center mb-2">
-            <i data-lucide="bookmark" class="me-2 text-primary-400"></i>
-            <h6 class="paragraph-body-small">狀態</h6>
+            <i data-lucide="bookmark" class="me-md-8 text-primary-400"></i>
+            <h6 class="paragraph-body-small-md text-gray-md-800">狀態</h6>
           </div>
 
           <div class="d-flex flex-wrap gap-2 paragraph-body">
-            <label class="pill">
+            <label class="pill align-center w-50 aria-controls">
               <input type="checkbox" name="status" value="brandnew" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">全新</span>
+              <span class="pill-text paragraph-body-md">全新</span>
             </label>
 
-            <label class="pill">
+            <label class="pill w-50 aria-controls">
               <input type="checkbox" name="status" value="fairly_new" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">九成新</span>
+              <span class="pill-text paragraph-body-md">九成新</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="status" value="below_70" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">七成新以下</span>
+              <span class="pill-text paragraph-body-md">七成新以下</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="status" value="exchange" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">以物易物</span>
+              <span class="pill-text paragraph-body-md">以物易物</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="status" value="donate" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">可捐贈</span>
+              <span class="pill-text paragraph-body-md">可捐贈</span>
             </label>
           </div>
         </section>
@@ -1317,27 +1320,27 @@
         <!-- 排序（radio pill） -->
         <section class="mb-md-16">
           <div class="section-title d-flex align-center mb-2">
-            <i data-lucide="sliders" class="me-2 text-primary-400"></i>
-            <h6 class="paragraph-body-small">排序</h6>
+            <i data-lucide="sliders" class="me-md-8 text-primary-400"></i>
+            <h6 class="paragraph-body-small-md text-gray-md-800">排序</h6>
           </div>
 
           <div class="d-flex flex-wrap gap-2">
             <label class="pill pill-radio">
               <input type="radio" name="sort" value="latest" checked />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">最新上架</span>
+              <span class="pill-text paragraph-body-md">最新上架</span>
             </label>
 
             <label class="pill pill-radio">
               <input type="radio" name="sort" value="price_asc" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">價格由低到高</span>
+              <span class="pill-text paragraph-body-md">價格由低到高</span>
             </label>
 
             <label class="pill pill-radio">
               <input type="radio" name="sort" value="price_desc" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">價格由高到低</span>
+              <span class="pill-text paragraph-body-md">價格由高到低</span>
             </label>
           </div>
         </section>
@@ -1345,45 +1348,63 @@
         <!-- 篩選條件（categories） -->
         <section class="mb-md-16">
           <div class="section-title d-flex align-center mb-2">
-            <i data-lucide="filter" class="me-2 text-primary-400"></i>
-            <h6 class="paragraph-body-small">篩選條件</h6>
+            <i data-lucide="filter" class="me-md-8 text-primary-400"></i>
+            <h6 class="paragraph-body-small-md text-gray-md-800">篩選條件</h6>
           </div>
 
           <div class="d-flex flex-wrap gap-2">
             <label class="pill">
               <input type="checkbox" name="cat" value="baby_clothes" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">嬰兒服飾</span>
+              <span class="pill-text paragraph-body-md">嬰兒服飾</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="cat" value="boy_clothes" checked />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">男孩服飾</span>
+              <span class="pill-text paragraph-body-md">男孩服飾</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="cat" value="girl_clothes" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">女孩服飾</span>
+              <span class="pill-text paragraph-body-md">女孩服飾</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="cat" value="toys" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">玩具</span>
+              <span class="pill-text paragraph-body-md">玩具</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="cat" value="books" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">育兒書籍</span>
+              <span class="pill-text paragraph-body-md">育兒書籍</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="cat" value="nursing" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">哺乳用品</span>
+              <span class="pill-text paragraph-body-md">哺乳用品</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="nursing" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text paragraph-body-md">推車</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="nursing" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text paragraph-body-md">背巾</span>
+            </label>
+
+            <label class="pill">
+              <input type="checkbox" name="cat" value="nursing" />
+              <span class="pill-check" aria-hidden="true"></span>
+              <span class="pill-text paragraph-body-md">安全座椅</span>
             </label>
 
             <!-- add more as needed -->
@@ -1393,52 +1414,74 @@
         <!-- 地區 -->
         <section class="mb-md-16">
           <div class="section-title d-flex align-center mb-2">
-            <i data-lucide="map-pin" class="me-2 text-primary-400"></i>
-            <h6 class="paragraph-body-small">地區（依位置）</h6>
+            <i data-lucide="map-pin" class="me-md-8 text-primary-400"></i>
+            <h6 class="paragraph-body-small-md text-gray-md-800">
+              地區（依位置）
+            </h6>
           </div>
 
           <div class="d-flex flex-wrap gap-2">
             <label class="pill">
               <input type="checkbox" name="region" value="taipei" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">台北</span>
+              <span class="pill-text paragraph-body-md">台北</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="region" value="newtaipei" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">新北</span>
+              <span class="pill-text paragraph-body-md">新北</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="region" value="taoyuan" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">桃園</span>
+              <span class="pill-text paragraph-body-md">桃園</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="region" value="taichung" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">台中</span>
+              <span class="pill-text paragraph-body-md">台中</span>
             </label>
 
             <label class="pill">
               <input type="checkbox" name="region" value="kaohsiung" />
               <span class="pill-check" aria-hidden="true"></span>
-              <span class="pill-text">高雄</span>
+              <span class="pill-text paragraph-body-md">高雄</span>
             </label>
           </div>
         </section>
 
         <!-- 價格範圍 -->
         <section class="mb-md-16">
-          <div class="section-title d-flex align-center mb-2">
+          <div class="price-inputs">
+            <div class="price-input-wrapper">
+              <input
+                type="number"
+                placeholder="$最低價格"
+                class="min-price"
+                class="form-control"
+              />
+            </div>
+            <span class="price-separator">-</span>
+            <div class="price-input-wrapper">
+              <input
+                type="number"
+                placeholder="$最高價格"
+                class="max-price"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <!-- <div class="section-title d-flex align-center mb-2">
             <i
               data-lucide="circle-dollar-sign"
-              class="me-2 text-primary-400"
+              class="me-md-8 text-primary-400"
             ></i>
-            <h6 class="paragraph-body-small">價格範圍</h6>
-          </div>
+            <h6 class="paragraph-body-small-md text-gray-md-800">價格範圍</h6>
+          </div> -->
 
           <div class="d-flex gap-2 align-items-center">
             <input
@@ -1458,14 +1501,10 @@
 
       <!-- 固定在面板底部的操作按鈕（Reset + Apply） -->
       <div class="offcanvas-footer d-flex justify-between align-center p-3">
-        <button
-          id="filterResetBtn"
-          type="button"
-          class="btn btn-outline-secondary w-50 me-2"
-        >
+        <button id="filterResetBtn" type="button" class="reset-btn button w-50">
           全部重設
         </button>
-        <button id="filterApplyBtn" type="button" class="btn btn-primary w-50">
+        <button id="filterApplyBtn" type="button" class="apply-btn button w-50">
           篩選
         </button>
       </div>
@@ -1814,7 +1853,7 @@
       </div>
     </section>
 
-    <a href="video.html" class="video-float">
+    <!-- <a href="video.html" class="video-float">
       <img
         src="/assets/images/products-Images/video-desktop.png"
         alt="video-name"
@@ -1830,24 +1869,32 @@
       <div class="video-name">
         <span class="video-title paragraph-body">影片名稱</span>
       </div>
-    </a>
+    </a> -->
 
-    <!-- 新增：mobile action sheet（從下方彈出）- 放在 body 底部，隱藏時 transform: translateY(100%) -->
-    <!-- <div id="mobileActionSheet" class="mobile-action-sheet" aria-hidden="true">
-      <div class="sheet-backdrop"></div>
-      <div class="sheet-panel">
-        <button class="sheet-close" aria-label="關閉">
-          <i data-lucide="x"></i>
-        </button>
-        <ul class="sheet-list">
-          <li><button class="sheet-btn" data-action="share">分享</button></li>
-          <li><button class="sheet-btn" data-action="chat">聊聊</button></li>
-        </ul>
-        <div class="sheet-cancel">
-          <button class="btn btn-light sheet-cancel-btn">取消</button>
-        </div>
+    <!-- 改為：把 icon name 正確放在 data-lucide，將 pt-83 改為 class -->
+    <a href="video.html" class="video-float" aria-label="影片連結">
+      <img
+        src="../assets/images/products-Images/video-desktop.png"
+        alt="video-name"
+        class="d-none d-md-block"
+      />
+      <!-- 如需行動版圖可啟用另一個 img with d-md-none -->
+      <img
+        src="../assets/images/products-Images/video-mobile.png"
+        alt="video-name"
+        class="d-none d-md-none"
+      />
+      <button
+        class="video-play-btn button d-flex align-center justify-center"
+        aria-label="播放"
+      >
+        <i data-lucide="circle-play" class="icon-play"></i>
+      </button>
+
+      <div class="video-name">
+        <span class="video-title paragraph-body">影片名稱</span>
       </div>
-    </div> -->
+    </a>
 
     <!-- Offcanvas 篩選面板 -->
     <div
@@ -1868,25 +1915,26 @@
         ></button>
       </div>
 
-      <div class="offcanvas-body">
+      <div class="offcanvas-body py-md-12">
         <!-- 狀態 -->
-        <section class="mb-3">
-          <i data-lucide="bookmark" class="me-2"></i>
-          <h6 class="fw-bold">狀態</h6>
-          <div class="d-flex flex-wrap gap-2 p">
-            <label><input type="checkbox" class="me-1" /> 全新</label>
-            <label><input type="checkbox" class="me-1" /> 九成新</label>
-            <label><input type="checkbox" class="me-1" /> 七成新以下</label>
-            <label><input type="checkbox" class="me-1" /> 以物易物</label>
-            <label><input type="checkbox" class="me-1" /> 可捐贈</label>
+        <section class="filter-group mb-16">
+          <i class="lucide me-md-8" data-lucide="bookmark"></i>
+          <h6 class="paragraph-body-small-md">狀態</h6>
+          <div class="d-flex flex-wrap gap-md-24">
+            <label><input type="checkbox" class="w-50" /> 全新</label>
+            <label><input type="checkbox" class="w-50" /> 九成新</label>
+            <label><input type="checkbox" class="w-50" /> 九成新</label>
+            <label><input type="checkbox" class="w-50" /> 七成新以下</label>
+            <label><input type="checkbox" /> 以物易物</label>
+            <label><input type="checkbox" /> 可捐贈</label>
           </div>
         </section>
 
         <!-- 篩選條件 -->
-        <section class="mb-3">
-          <i data-lucide="funnel" class="me-2"></i>
-          <h6 class="fw-bold">篩選條件</h6>
-          <div class="d-flex flex-wrap gap-2">
+        <section class="filter-group mb-16">
+          <i class="lucide me-md-8" data-lucide="funnel"></i>
+          <h6 class="paragraph-body-small-md">篩選條件</h6>
+          <div class="d-md-flex flex-wrap gap-2">
             <label><input type="checkbox" class="me-1" /> 嬰兒服飾</label>
             <label><input type="checkbox" class="me-1" /> 男孩服飾</label>
             <label><input type="checkbox" class="me-1" /> 女孩服飾</label>
@@ -1901,9 +1949,9 @@
         </section>
 
         <!-- 位置 -->
-        <section class="mb-3">
-          <i data-lucide="map-pin" class="me-2"></i>
-          <h6 class="fw-bold">位置（依地區）</h6>
+        <section class="filter-group mb-16">
+          <i class="lucide me-md-8" data-lucide="map-pin"></i>
+          <h6 class="paragraph-body-small-md">位置（依地區）</h6>
           <div class="d-flex flex-wrap gap-2">
             <label><input type="checkbox" class="me-1" /> 台北</label>
             <label><input type="checkbox" class="me-1" /> 新北</label>
@@ -1914,9 +1962,9 @@
         </section>
 
         <!-- 排序 -->
-        <section class="mb-3">
-          <i data-lucide="list-filter" class="me-2"></i>
-          <h6 class="fw-bold">排序</h6>
+        <section class="filter-group mb-16">
+          <i class="lucide me-md-8" data-lucide="list-filter"></i>
+          <h6 class="paragraph-body-small-md">排序</h6>
           <label
             ><input type="radio" name="sort" checked class="me-1" />
             最新上架</label
@@ -1930,9 +1978,14 @@
         </section>
 
         <!-- 價格範圍 -->
-        <section>
-          <i data-lucide="circle-dollar-sign" class="me-2 text-primary"></i>
-          <h6 class="fw-bold">價格範圍</h6>
+
+        <section class="filter-group mb-16">
+          <i
+            class="lucide me-2"
+            data-lucide="circle-dollar-sign"
+            class="me-2 text-primary"
+          ></i>
+          <h6 class="paragraph-body-small-md">價格範圍</h6>
           <div class="d-flex align-items-center">
             <input
               type="number"
