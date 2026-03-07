@@ -1,5 +1,5 @@
 body {
-  background-color: var(--bs-gray-50);
+  background-color: #f2f2f4;
 }
 h3 {
   font-size: 28px;
@@ -12,9 +12,6 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 2.5rem 0;
-
-  // border-bottom: 1px solid #dee2e6;
 }
 
 .step-container {
@@ -227,7 +224,7 @@ td {
   margin: 0;
 }
 
-// 加購卡片
+// 參、加購卡片
 .bg-color {
   background-color: #f2f2f4;
 }
@@ -345,7 +342,87 @@ td {
   font-size: 16px;
 }
 
-//結帳金額
+@media (max-width: 767px) {
+  .h5-md {
+    //
+    font-size: 20px;
+    line-height: 1.2;
+    color: #343a40;
+  }
+  .d-block-md {
+    display: block;
+  }
+  .d-flex-md {
+    display: flex;
+  }
+  .d-none-md {
+    //
+    display: none;
+  }
+  .row-md {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .col-1-md {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 4);
+  }
+  .col-2-md {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 4 * 2);
+  }
+  // .col-3-md {
+  //   min-width: 258px;
+  //   padding-left: 12px;
+  //   padding-right: 12px;
+  //   width: calc(100% / 4 * 3);
+  // }
+  .col-4-md {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+  }
+
+  .product-row-md {
+    //
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .product-col-md {
+    //
+    min-width: 282px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .overflow-x-auto-md {
+    overflow-x: auto;
+  }
+  .flex-nowrap-md {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 576px) {
+  .plr-12-sm {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .ptb-12-sm {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .ptb-32-sm {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .d-none-sm {
+    //
+    display: none;
+  }
+}
+
+// 肆、結帳金額
 .total-amount {
   p {
     font-size: 16px;

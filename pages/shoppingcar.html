@@ -10,120 +10,214 @@
   <body>
     <%- include('./layout/header'); -%>
     <!-- 壹、購物流程步驟 分隔線全滿版 -->
-    <div class="px-0 mt-16">
-      <!--mt-16:為了推出表頭範圍 -->
-      <div
-        class="checkout-steps py-10 border-bottom border-16"
-        aria-label="購物流程"
-      >
-        <ol class="step-container list-unstyled m-0">
-          <!-- 步驟 1：確認購物車 -->
-          <li class="step-item active">
-            <div class="step-content">
-              <div class="step-number" aria-current="step">01</div>
-              <p class="step-label">確認購物車</p>
-            </div>
-          </li>
-          <div class="step-line" aria-hidden="true"></div>
 
-          <!-- 步驟 2：付款與運送方式 -->
-          <li class="step-item">
-            <div class="step-content">
-              <div class="step-number">02</div>
-              <p class="step-label">付款與運送方式</p>
-            </div>
-          </li>
-          <div class="step-line" aria-hidden="true"></div>
+    <div style="margin-top: 75px">
+      <!--margin-top: 75px:為了推出表頭範圍 -->
+      <header class="mb-4" style="background-color: #fafafa">
+        <div class="container">
+          <div class="checkout-steps py-10" aria-label="購物流程">
+            <ol class="step-container list-unstyled m-0">
+              <!-- 步驟 1：確認購物車 -->
+              <li class="step-item active">
+                <div class="step-content">
+                  <div class="step-number" aria-current="step">01</div>
+                  <p class="step-label">確認購物車</p>
+                </div>
+              </li>
+              <div class="step-line" aria-hidden="true"></div>
 
-          <!-- 步驟 3：填寫寄送資料 -->
-          <li class="step-item">
-            <div class="step-content">
-              <div class="step-number">03</div>
-              <p class="step-label">填寫寄送資料</p>
-            </div>
-          </li>
-          <div class="step-line" aria-hidden="true"></div>
+              <!-- 步驟 2：付款與運送方式 -->
+              <li class="step-item">
+                <div class="step-content">
+                  <div class="step-number">02</div>
+                  <p class="step-label">付款與運送方式</p>
+                </div>
+              </li>
+              <div class="step-line" aria-hidden="true"></div>
 
-          <!-- 步驟 4：完成訂購 -->
-          <li class="step-item">
-            <div class="step-content">
-              <div class="step-number">04</div>
-              <p class="step-label">完成訂購</p>
-            </div>
-          </li>
-        </ol>
-      </div>
+              <!-- 步驟 3：填寫寄送資料 -->
+              <li class="step-item">
+                <div class="step-content">
+                  <div class="step-number">03</div>
+                  <p class="step-label">填寫寄送資料</p>
+                </div>
+              </li>
+              <div class="step-line" aria-hidden="true"></div>
+
+              <!-- 步驟 4：完成訂購 -->
+              <li class="step-item">
+                <div class="step-content">
+                  <div class="step-number">04</div>
+                  <p class="step-label">完成訂購</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </header>
     </div>
     <!-- 貳、購物車主體 -->
-    <div class="container px-0">
-      <!-- 購物車內容 -->
-      <div class="mt-16 mb-20">
-        <!-- 一、訂單確認 -->
-        <div>
-          <h3 class="mb-12 fw-bold">購物車｜訂單確認</h3>
-          <div class="mb-12">
-            <table class="table table-hover">
-              <thead class="table-light">
-                <tr class="shopping-item px-6">
+    <main class="" style="background-color: #fafafa">
+      <div class="container px-0">
+        <!-- 購物車內容 -->
+        <div class="pt-16 pb-20">
+          <!-- 一、訂單確認 -->
+          <div>
+            <h3 class="mb-12 fw-bold">購物車｜訂單確認</h3>
+            <div class="mb-12">
+              <table class="table table-hover mb-0">
+                <thead class="table-light">
+                  <tr class="shopping-item px-6">
+                    <th scope="col">
+                      <img
+                        class="rounded-circle m-3"
+                        src="/assets/images/購物車/Photo.png"
+                        alt="baby"
+                      /><span>雙寶媽</span>
+                    </th>
+                    <th scope="col"><p class="text-start ms-3">商品訊息</p></th>
+                    <th scope="col"><p>狀態</p></th>
+                    <th scope="col"><p>單價</p></th>
+                    <th scope="col"><p>數量</p></th>
+                    <th scope="col"><p>總計</p></th>
+                    <th scope="col"><span class="mx-3">操作</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="shopping-item px-6">
+                    <th scope="row">
+                      <input
+                        class="form-check-input-lg text-center align-middle active"
+                        type="checkbox"
+                        name="addToCart"
+                        id="checkboxNoLabel"
+                        value=""
+                        aria-label="加入購物車"
+                        checked="checked"
+                      />
+                      <img
+                        class="my-4 ms-6"
+                        src="/assets/images/購物車/Image-背巾.png"
+                        alt="多功能寶寶揹巾"
+                      />
+                    </th>
+                    <td class="text-center ms-3">多功能寶寶揹巾</td>
+                    <td><span class="item-status">全新</span></td>
+                    <td>NT$ 1,280</td>
+                    <td>
+                      <div
+                        class="input-group quantity-selector product-quantity"
+                        style="max-width: 175px"
+                      >
+                        <button class="btn btn-outline-gray-300" type="button">
+                          一
+                        </button>
+                        <input
+                          type="number"
+                          class="form-control text-center qty-input"
+                          value="1"
+                          min="1"
+                          max="2"
+                        />
+                        <button class="btn btn-outline-gray-300" type="button">
+                          十
+                        </button>
+                      </div>
+                    </td>
+                    <td class="fw-bold">NT$ 1,280</td>
+                    <td>刪除</td>
+                  </tr>
+                  <tr class="shopping-item px-6">
+                    <th scope="row">
+                      <input
+                        class="form-check-input-lg text-center align-middle"
+                        type="checkbox"
+                        name="addToCart"
+                        id="checkboxNoLabel"
+                        value=""
+                        aria-label="加入購物車"
+                        checked="checked"
+                      />
+                      <img
+                        class="my-4 ms-6"
+                        src="/assets/images/購物車/Image-泳衣.png"
+                        alt="嬰兒連身泳衣"
+                      />
+                    </th>
+                    <td>嬰兒連身泳衣</td>
+                    <td><span class="item-status">九成新</span></td>
+                    <td>NT$ 100</td>
+                    <td>
+                      <div
+                        class="input-group quantity-selector product-quantity"
+                        style="max-width: 175px"
+                      >
+                        <button class="btn btn-outline-gray-300" type="button">
+                          一
+                        </button>
+                        <input
+                          type="number"
+                          class="form-control text-center qty-input"
+                          value="1"
+                          min="1"
+                          max="2"
+                        />
+                        <button class="btn btn-outline-gray-300" type="button">
+                          十
+                        </button>
+                      </div>
+                    </td>
+                    <td class="fw-bold">NT$ 100</td>
+                    <td>刪除</td>
+                  </tr>
+                </tbody>
+
+                <tfoot class="table-light">
+                  <tr class="shopping-item px-6">
+                    <th scope="row" colspan="1">
+                      <div class="d-flex text-center align-middle ms-6 my-3">
+                        <input
+                          class="form-check-input-lg my-3 me-6"
+                          type="checkbox"
+                          name="addToCart"
+                          id="checkboxNoLabel"
+                          value=""
+                          aria-label="加入購物車"
+                          checked="checked"
+                        />
+                        <p class="my-3">全選2件</p>
+                      </div>
+                    </th>
+                    <td colspan="5"></td>
+                    <td class="fw-bold">
+                      小計<span class="total-price ps-3 fw-bold"
+                        >NT$ 1,380</span
+                      >
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <!-- 二、加購商品 -->
+          <div class="">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light form-headfoot">
+                <tr class="shopping-item">
                   <th scope="col">
-                    <img
-                      class="rounded-circle m-3"
-                      src="/assets/images/購物車/Photo.png"
-                      alt="baby"
-                    /><span>雙寶媽</span>
+                    <div class="py-6">
+                      <span class="text-start">加購商品</span>
+                    </div>
                   </th>
-                  <th scope="col"><p class="text-start ms-3">商品訊息</p></th>
-                  <th scope="col"><p>狀態</p></th>
-                  <th scope="col"><p>單價</p></th>
-                  <th scope="col"><p>數量</p></th>
-                  <th scope="col"><p>總計</p></th>
-                  <th scope="col"><span class="mx-3">操作</span></th>
+                  <th scope="col" class="text-start">商品訊息</th>
+                  <th scope="col">狀態</th>
+                  <th scope="col">單價</th>
+                  <th scope="col">數量</th>
+                  <th scope="col">總計</th>
+                  <th scope="col">操作</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="shopping-item px-6">
-                  <th scope="row">
-                    <input
-                      class="form-check-input-lg text-center align-middle active"
-                      type="checkbox"
-                      name="addToCart"
-                      id="checkboxNoLabel"
-                      value=""
-                      aria-label="加入購物車"
-                      checked="checked"
-                    />
-                    <img
-                      class="my-4 ms-6"
-                      src="/assets/images/購物車/Image-背巾.png"
-                      alt="多功能寶寶揹巾"
-                    />
-                  </th>
-                  <td class="text-center ms-3">多功能寶寶揹巾</td>
-                  <td><span class="item-status">全新</span></td>
-                  <td>NT$ 1,280</td>
-                  <td>
-                    <div
-                      class="input-group quantity-selector product-quantity"
-                      style="max-width: 175px"
-                    >
-                      <button class="btn btn-outline-gray-300" type="button">
-                        一
-                      </button>
-                      <input
-                        type="number"
-                        class="form-control text-center qty-input"
-                        value="1"
-                        min="1"
-                        max="2"
-                      />
-                      <button class="btn btn-outline-gray-300" type="button">
-                        十
-                      </button>
-                    </div>
-                  </td>
-                  <td class="fw-bold">NT$ 1,280</td>
-                  <td>刪除</td>
-                </tr>
                 <tr class="shopping-item px-6">
                   <th scope="row">
                     <input
@@ -137,13 +231,13 @@
                     />
                     <img
                       class="my-4 ms-6"
-                      src="/assets/images/購物車/Image-泳衣.png"
-                      alt="嬰兒連身泳衣"
+                      src="/assets/images/購物車/Image-小BaoBao透氣背巾.png"
+                      alt="BaoBao透氣背巾"
                     />
                   </th>
-                  <td>嬰兒連身泳衣</td>
-                  <td><span class="item-status">九成新</span></td>
-                  <td>NT$ 100</td>
+                  <td>BaoBao透氣背巾</td>
+                  <td><span class="item-status">七成新</span></td>
+                  <td>NT$ 500</td>
                   <td>
                     <div
                       class="input-group quantity-selector product-quantity"
@@ -164,11 +258,10 @@
                       </button>
                     </div>
                   </td>
-                  <td class="fw-bold">NT$ 100</td>
+                  <td>NT$ 500</td>
                   <td>刪除</td>
                 </tr>
               </tbody>
-
               <tfoot class="table-light">
                 <tr class="shopping-item px-6">
                   <th scope="row" colspan="1">
@@ -182,113 +275,29 @@
                         aria-label="加入購物車"
                         checked="checked"
                       />
-                      <p class="my-3">全選2件</p>
+                      <p class="my-3">全選1件</p>
                     </div>
                   </th>
                   <td colspan="5"></td>
                   <td class="fw-bold">
-                    小計<span class="total-price ps-3 fw-bold">NT$ 1,380</span>
+                    小計<span class="total-price ps-3 fw-bold">NT$ 500</span>
                   </td>
                 </tr>
               </tfoot>
             </table>
           </div>
         </div>
-        <!-- 二、加購商品 -->
-        <div class="mb-20">
-          <table class="table table-hover align-middle">
-            <thead class="table-light form-headfoot">
-              <tr class="shopping-item">
-                <th scope="col">
-                  <div class="py-6">
-                    <span class="text-start">加購商品</span>
-                  </div>
-                </th>
-                <th scope="col" class="text-start">商品訊息</th>
-                <th scope="col">狀態</th>
-                <th scope="col">單價</th>
-                <th scope="col">數量</th>
-                <th scope="col">總計</th>
-                <th scope="col">操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="shopping-item px-6">
-                <th scope="row">
-                  <input
-                    class="form-check-input-lg text-center align-middle"
-                    type="checkbox"
-                    name="addToCart"
-                    id="checkboxNoLabel"
-                    value=""
-                    aria-label="加入購物車"
-                    checked="checked"
-                  />
-                  <img
-                    class="my-4 ms-6"
-                    src="/assets/images/購物車/Image-小BaoBao透氣背巾.png"
-                    alt="BaoBao透氣背巾"
-                  />
-                </th>
-                <td>BaoBao透氣背巾</td>
-                <td><span class="item-status">七成新</span></td>
-                <td>NT$ 500</td>
-                <td>
-                  <div
-                    class="input-group quantity-selector product-quantity"
-                    style="max-width: 175px"
-                  >
-                    <button class="btn btn-outline-gray-300" type="button">
-                      一
-                    </button>
-                    <input
-                      type="number"
-                      class="form-control text-center qty-input"
-                      value="1"
-                      min="1"
-                      max="2"
-                    />
-                    <button class="btn btn-outline-gray-300" type="button">
-                      十
-                    </button>
-                  </div>
-                </td>
-                <td>NT$ 500</td>
-                <td>刪除</td>
-              </tr>
-            </tbody>
-            <tfoot class="table-light">
-              <tr class="shopping-item px-6">
-                <th scope="row" colspan="1">
-                  <div class="d-flex text-center align-middle ms-6 my-3">
-                    <input
-                      class="form-check-input-lg my-3 me-6"
-                      type="checkbox"
-                      name="addToCart"
-                      id="checkboxNoLabel"
-                      value=""
-                      aria-label="加入購物車"
-                      checked="checked"
-                    />
-                    <p class="my-3">全選1件</p>
-                  </div>
-                </th>
-                <td colspan="5"></td>
-                <td class="fw-bold">
-                  小計<span class="total-price ps-3 fw-bold">NT$ 500</span>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
       </div>
-    </div>
+    </main>
     <!-- 參、加購卡片 -->
-    <div class="bg-color px-0">
+    <div>
       <div class="container more-product">
-        <h3 class="pt-10 pb-8 fw-bold">猜​你​還想​再​加購...</h3>
-        <ul class="row mb-0 pb-16">
-          <li class="col-3">
+        <h3 class="pt-10 pb-8 fw-bold h5-md">猜​你​還想​再​加購...</h3>
+        <!-- 桌機版 -->
+        <ul
+          class="row flex-nowrap-md overflow-x-auto-md product-row-md mb-0 pb-16 px--2"
+        >
+          <li class="col-3 product-col-md">
             <div class="card border-0 opacity-100 bg-color">
               <div class="more-product-card mb-4">
                 <img
@@ -303,7 +312,7 @@
                 </div>
                 <button
                   type="button"
-                  class="chevron-left btn btn-light rounded-circle shadow-sm border-0"
+                  class="chevron-left btn btn-light rounded-circle shadow-sm border-0 d-none-md"
                 >
                   <i data-lucide="chevron-left"></i>
                 </button>
@@ -340,7 +349,7 @@
               </div>
             </div>
           </li>
-          <li class="col-3">
+          <li class="col-3 product-col-md">
             <div class="card border-0 opacity-100 bg-color">
               <div class="more-product-card mb-4">
                 <img
@@ -386,7 +395,7 @@
               </div>
             </div>
           </li>
-          <li class="col-3">
+          <li class="col-3 product-col-md">
             <div class="card border-0 opacity-100 bg-color">
               <div class="more-product-card mb-4">
                 <img
@@ -432,7 +441,7 @@
               </div>
             </div>
           </li>
-          <li class="col-3">
+          <li class="col-3 product-col-md">
             <div class="card border-0 opacity-100 bg-color">
               <div class="more-product-card mb-4">
                 <img
@@ -447,7 +456,7 @@
                 </div>
                 <button
                   type="button"
-                  class="chevron-right btn btn-light rounded-circle shadow-sm border-0"
+                  class="chevron-right btn btn-light rounded-circle shadow-sm border-0 d-none-md"
                 >
                   <i data-lucide="chevron-right"></i>
                 </button>
@@ -493,7 +502,7 @@
       <div class="d-flex justify-content-between align-items-end py-10">
         <button
           type="button"
-          class="btn btn-white px-4 py-3"
+          class="btn btn-white px-4 py-3 d-none-sm"
           style="font-size: 16px"
         >
           <i class="text-primary-300 me-2" data-lucide="chevron-left"></i
